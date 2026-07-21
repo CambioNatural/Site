@@ -81,7 +81,7 @@ export default function Navbar({ bg = "bg-white", textColor = "text-black", ctaB
           {/* Book a call CTA */}
           <div className={`absolute ${ctaBg} rounded-[12px]`} style={{ left: 1109, top: 27, width: 171, height: 46 }} />
           <a
-            href="https://calendly.com/cjesquinca"
+            href="https://calendar.proton.me/bookings#vOgwwkQl9BCrsYR0ihiKPA555NHNirVRo3Fu9UJI9c8="
             target="_blank"
             rel="noopener noreferrer"
             className={`absolute flex items-center justify-center font-[family-name:var(--font-heading)] uppercase text-[14px] ${ctaText} text-center leading-[1.216] hover:opacity-90 transition-opacity`}
@@ -129,7 +129,7 @@ export default function Navbar({ bg = "bg-white", textColor = "text-black", ctaB
                 {l.label}
               </Link>
             ))}
-            <a href="https://calendly.com/cjesquinca" target="_blank" rel="noopener noreferrer"
+            <a href="https://calendar.proton.me/bookings#vOgwwkQl9BCrsYR0ihiKPA555NHNirVRo3Fu9UJI9c8=" target="_blank" rel="noopener noreferrer"
               className={`${ctaBg} ${ctaText} font-[family-name:var(--font-heading)] uppercase text-[14px] px-6 py-3 rounded-xl w-fit`}>
               book a call
             </a>
