@@ -1,20 +1,8 @@
-"use client";
-
-import { useState } from "react";
+import { SUBSTACK_URL } from "@/lib/links";
 
 const imgMetacrisis = "/images/newsletter-metacrisis.png";
 
 export default function NewsletterSection() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (!email) return;
-    // Placeholder – wire up to your email provider
-    setStatus("success");
-  }
-
   return (
     <section className="w-full bg-white py-16 px-10">
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -34,40 +22,14 @@ export default function NewsletterSection() {
             action.
           </p>
 
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-3 mt-2"
-            aria-label="Newsletter signup"
+          <a
+            href={SUBSTACK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center h-[42px] px-6 mt-2 w-fit bg-black text-white rounded-[5px] font-[family-name:var(--font-body)] text-[18px] tracking-[0.36px] hover:opacity-80 transition-opacity"
           >
-            <label htmlFor="newsletter-email" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="newsletter-email"
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="your@email.com"
-              className="flex-1 h-[42px] border border-black rounded-[5px] px-4 font-[family-name:var(--font-body)] text-[18px] text-black bg-white focus:outline-none focus:ring-2 focus:ring-black"
-            />
-            <button
-              type="submit"
-              className="h-[42px] px-6 bg-black text-white rounded-[5px] font-[family-name:var(--font-body)] text-[18px] tracking-[0.36px] hover:opacity-80 transition-opacity"
-            >
-              Subscribe
-            </button>
-          </form>
-
-          {status === "success" && (
-            <p
-              role="status"
-              aria-live="polite"
-              className="text-[16px] text-black font-[family-name:var(--font-body)]"
-            >
-              Thanks! You&apos;re on the list.
-            </p>
-          )}
+            Subscribe on Substack
+          </a>
         </div>
 
         {/* Right: decorative image */}

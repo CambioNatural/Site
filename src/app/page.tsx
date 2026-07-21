@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import DesktopScale from "@/components/DesktopScale";
+import { SUBSTACK_URL } from "@/lib/links";
 
 export default function HomePage() {
   return (
@@ -123,11 +124,9 @@ export default function HomePage() {
             <div className="absolute rounded-tr-[267px] overflow-hidden" style={{ left: 634, top: 72, width: 398, height: 270 }}>
               <img src="/images/newsletter-metacrisis.png" alt="" aria-hidden className="w-full h-full object-cover" />
             </div>
-            <input type="email" placeholder="your@email.com" aria-label="Email address"
-              className="absolute border border-black rounded-[5px] bg-white font-[family-name:var(--font-body)] text-[18px] text-black px-3 focus:outline-none"
-              style={{ left: 615, top: 321, width: 436, height: 42 }} />
-            <button className="absolute bg-black rounded-[5px] font-[family-name:var(--font-body)] text-[18px] text-white text-center tracking-[0.36px]"
-              style={{ left: 1071, top: 321, width: 208, height: 42 }}>Subscribe</button>
+            <a href={SUBSTACK_URL} target="_blank" rel="noopener noreferrer"
+              className="absolute flex items-center justify-center bg-black rounded-[5px] font-[family-name:var(--font-body)] text-[18px] text-white text-center tracking-[0.36px] hover:opacity-80 transition-opacity"
+              style={{ left: 615, top: 321, width: 664, height: 42 }}>Subscribe on Substack</a>
           </div>
 
           {/* Footer */}
@@ -259,11 +258,10 @@ export default function HomePage() {
           <div className="rounded-tr-[80px] overflow-hidden mb-4" style={{ height: 179 }}>
             <img src="/images/newsletter-metacrisis.png" alt="" aria-hidden className="w-full h-full object-cover" />
           </div>
-          <input type="email" placeholder="Your email" aria-label="Email address"
-            className="w-full border border-black rounded-[5px] bg-white font-[family-name:var(--font-body)] text-[16px] text-black px-3 h-[35px] focus:outline-none mb-3" />
-          <button className="block mx-auto bg-black rounded-[5px] font-[family-name:var(--font-body)] text-[16px] text-white px-8 h-[35px]">
-            Register
-          </button>
+          <a href={SUBSTACK_URL} target="_blank" rel="noopener noreferrer"
+            className="block w-fit mx-auto bg-black rounded-[5px] font-[family-name:var(--font-body)] text-[16px] text-white px-8 h-[35px] leading-[35px] hover:opacity-80 transition-opacity">
+            Subscribe on Substack
+          </a>
         </div>
 
         {/* Footer */}
