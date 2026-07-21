@@ -1,6 +1,25 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import DesktopScale from "@/components/DesktopScale";
 import SubstackEmbed from "@/components/SubstackEmbed";
+
+export const metadata: Metadata = {
+  title: "We Are",
+  description:
+    "Cambio Natural is a collective of practitioners committed to overcoming strategic polarization and embodying alternative futures for Planetary Health — meet the founding members, Cesar Jerónimo, Blaga and Marcelo, and our collaboration ecosystem.",
+  alternates: { canonical: "/we-are" },
+  openGraph: {
+    url: "/we-are",
+    title: "We Are — Cambio Natural",
+    description:
+      "A collective of practitioners committed to overcoming strategic polarization and embodying alternative futures for Planetary Health.",
+  },
+  twitter: {
+    title: "We Are — Cambio Natural",
+    description:
+      "A collective of practitioners committed to overcoming strategic polarization and embodying alternative futures for Planetary Health.",
+  },
+};
 
 const partnerLogos = [
   { src: "/images/partner-113.png", alt: "Partner organization", w: 173, h: 82, l: 177, t: 4167 },

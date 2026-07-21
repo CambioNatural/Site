@@ -1,6 +1,25 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import DesktopScale from "@/components/DesktopScale";
 import SubstackEmbed from "@/components/SubstackEmbed";
+
+export const metadata: Metadata = {
+  title: "Gatherings",
+  description:
+    "Cambio Natural convenes spaces for dialogue where diverse practitioners navigate tensions, build trust and nurture bold ideas — from online dialogues on Planetary Health to community care retreats and the Global Doughnut Days México.",
+  alternates: { canonical: "/gatherings" },
+  openGraph: {
+    url: "/gatherings",
+    title: "Gatherings — Cambio Natural",
+    description:
+      "Spaces for dialogue where practitioners across cultures and disciplines converge to navigate tensions, build trust and nurture bold ideas worth failing for.",
+  },
+  twitter: {
+    title: "Gatherings — Cambio Natural",
+    description:
+      "Spaces for dialogue where practitioners across cultures and disciplines converge to navigate tensions, build trust and nurture bold ideas worth failing for.",
+  },
+};
 
 export default function GatheringsPage() {
   return (

@@ -1,6 +1,25 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import DesktopScale from "@/components/DesktopScale";
 import SubstackEmbed from "@/components/SubstackEmbed";
+
+export const metadata: Metadata = {
+  title: "Media Club",
+  description:
+    "The Media Club is a shared learning and conversation circle for honest, thoughtful conversations about the media that shapes our lives. We meet every two months for a 90-minute virtual session to question our assumptions and imagine paths toward collective action.",
+  alternates: { canonical: "/media-club" },
+  openGraph: {
+    url: "/media-club",
+    title: "Media Club — Cambio Natural",
+    description:
+      "A reading, listening and conversation circle exploring how personal choices connect with power, governance and the systems we depend on.",
+  },
+  twitter: {
+    title: "Media Club — Cambio Natural",
+    description:
+      "A reading, listening and conversation circle exploring how personal choices connect with power, governance and the systems we depend on.",
+  },
+};
 
 export default function MediaClubPage() {
   return (

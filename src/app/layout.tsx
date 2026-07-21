@@ -14,9 +14,28 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Cambio Natural",
+  metadataBase: new URL("https://cambionatur.al"),
+  title: {
+    default: "Cambio Natural — Bridge Builders for Planetary Health",
+    template: "%s — Cambio Natural",
+  },
   description:
-    "A collective supporting bridge builders and caregivers with technology, gatherings and community.",
+    "Cambio Natural is a collective supporting bridge builders and caregivers with technology, gatherings and community, bringing wisdom from the margins to transformative action for Planetary Health.",
+  openGraph: {
+    siteName: "Cambio Natural",
+    type: "website",
+    locale: "en_US",
+    url: "https://cambionatur.al",
+    title: "Cambio Natural — Bridge Builders for Planetary Health",
+    description:
+      "A collective supporting bridge builders and caregivers with technology, gatherings and community.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cambio Natural — Bridge Builders for Planetary Health",
+    description:
+      "A collective supporting bridge builders and caregivers with technology, gatherings and community.",
+  },
 };
 
 export default function RootLayout({

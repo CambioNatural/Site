@@ -1,5 +1,24 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import DesktopScale from "@/components/DesktopScale";
+
+export const metadata: Metadata = {
+  title: "Tools",
+  description:
+    "Tools and spaces for dialogue and collaboration supporting bridge builders and caregivers — curated resources for nature, economy and technology, guiding how we redefine our relationship with the planet's natural systems.",
+  alternates: { canonical: "/tools" },
+  openGraph: {
+    url: "/tools",
+    title: "Tools — Cambio Natural",
+    description:
+      "Curated tools for nature, economy and technology that support bridge builders and caregivers in redefining our relationship with the planet.",
+  },
+  twitter: {
+    title: "Tools — Cambio Natural",
+    description:
+      "Curated tools for nature, economy and technology that support bridge builders and caregivers in redefining our relationship with the planet.",
+  },
+};
 
 export default function ToolsPage() {
   return (
