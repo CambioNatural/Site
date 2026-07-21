@@ -1,7 +1,7 @@
 import { SUBSTACK_EMBED_URL } from "@/lib/links";
 
 export default function SubstackEmbed({
-  height = 60,
+  height = 130,
   className = "",
 }: {
   height?: number;

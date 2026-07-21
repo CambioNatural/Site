@@ -88,7 +88,7 @@ export default function GatheringsPage() {
             <div className="absolute rounded-tr-[267px] overflow-hidden" style={{ left: 635, top: 72, width: 398, height: 270 }}>
               <img src="/images/newsletter-metacrisis.png" alt="" aria-hidden className="w-full h-full object-cover" />
             </div>
-            <div className="absolute" style={{ left: 616, top: 321, width: 436, height: 60 }}>
+            <div className="absolute" style={{ left: 616, top: 360, width: 436, height: 130 }}>
               <SubstackEmbed />
             </div>
           </div>
