@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import DesktopScale from "@/components/DesktopScale";
-import { SUBSTACK_URL } from "@/lib/links";
+import SubstackEmbed from "@/components/SubstackEmbed";
 
 const partnerLogos = [
   { src: "/images/partner-113.png", alt: "Partner organization", w: 173, h: 82, l: 177, t: 4167 },
@@ -374,10 +374,7 @@ export default function WeArePage() {
           <div className="rounded-tr-[80px] overflow-hidden mb-4" style={{ height: 179 }}>
             <img src="/images/newsletter-metacrisis.png" alt="" aria-hidden className="w-full h-full object-cover" />
           </div>
-          <a href={SUBSTACK_URL} target="_blank" rel="noopener noreferrer"
-            className="block w-fit mx-auto bg-black rounded-[5px] font-[family-name:var(--font-body)] text-[16px] text-white px-8 h-[35px] leading-[35px] hover:opacity-80 transition-opacity">
-            Subscribe on Substack
-          </a>
+          <SubstackEmbed />
         </div>
 
         {/* Footer */}

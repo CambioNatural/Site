@@ -1,2 +1,1 @@
-export const SUBSTACK_URL =
-  "https://cambionatural.substack.com/?r=8scg4h&utm_campaign=pub-share-checklist";
+export const SUBSTACK_EMBED_URL = "https://cambionatural.substack.com/embed";

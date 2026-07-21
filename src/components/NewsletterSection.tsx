@@ -1,4 +1,4 @@
-import { SUBSTACK_URL } from "@/lib/links";
+import SubstackEmbed from "./SubstackEmbed";
 
 const imgMetacrisis = "/images/newsletter-metacrisis.png";
 
@@ -22,14 +22,7 @@ export default function NewsletterSection() {
             action.
           </p>
 
-          <a
-            href={SUBSTACK_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center h-[42px] px-6 mt-2 w-fit bg-black text-white rounded-[5px] font-[family-name:var(--font-body)] text-[18px] tracking-[0.36px] hover:opacity-80 transition-opacity"
-          >
-            Subscribe on Substack
-          </a>
+          <SubstackEmbed className="mt-2 max-w-[436px]" />
         </div>
 
         {/* Right: decorative image */}
