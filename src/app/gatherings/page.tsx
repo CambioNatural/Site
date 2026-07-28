@@ -28,8 +28,8 @@ export default function GatheringsPage() {
 
       {/* ── DESKTOP ────────────────────────────────────────────── */}
       <main className="hidden md:block">
-        <DesktopScale height={3980}>
-        <div className="relative" style={{ width: 1440, height: 3980 }}>
+        <DesktopScale height={3838}>
+        <div className="relative" style={{ width: 1440, height: 3838 }}>
 
           {/* Gathering hero globe — top left bleed, white mosaic shape on blue bg */}
           <div className="absolute overflow-hidden rounded-full pointer-events-none" style={{ left: -220, top: 160, width: 560, height: 560 }}>
@@ -56,34 +56,36 @@ export default function GatheringsPage() {
             <p>: Social Innovation for Planetary Health</p>
             <p className="italic">From science to praxis</p>
             <a href="https://youtu.be/_QApShC_RxA" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-80 block mt-2">Watch video</a>
+            <p className="mt-4">
+              Hosted by the Sustainability Research Innovation Summit, this was a participatory dialogue between practitioners from different cultural and geographical latitudes, across disciplines and sectors, aimed at discussing the transformations needed towards more desirable futures for our planet and species.
+            </p>
           </div>
-          <p className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 616, top: 1086, width: 664 }}>
-            Hosted by the Sustainability Research Innovation Summit, this was a participatory dialogue between practitioners from different cultural and geographical latitudes, across disciplines and sectors, aimed at discussing the transformations needed towards more desirable futures for our planet and species.
-          </p>
-          <div className="absolute overflow-hidden rounded-lg" style={{ left: 616, top: 1371, width: 574, height: 300 }}>
+          <div className="absolute overflow-hidden rounded-lg" style={{ left: 616, top: 1086, width: 574, height: 300 }}>
             <img src="/images/gathering-online-cn0301.png" alt="Online dialogue gathering" className="w-full h-full object-cover" />
           </div>
 
           {/* Community care */}
-          <p className="absolute font-[family-name:var(--font-heading)] text-[29px] text-white leading-[1.216]" style={{ left: 160, top: 1838, width: 436 }}>Community care gatherings</p>
-          <p className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 616, top: 1838, width: 664 }}>
-            Hosted by Radici a Moncalieri we organized a three day gathering to eat, drink, laugh, cry, sing, sleep and take home (and share with others) lessons about resilience and strength from nature, other communities, and cultures that are successfully facing challenges today.
-          </p>
-          <div className="absolute overflow-hidden rounded-lg" style={{ left: 616, top: 2090, width: 244, height: 300 }}>
+          <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 160, top: 1850, width: 436 }}>
+            <p className="font-[family-name:var(--font-heading)] leading-[1.216]">Community care gatherings</p>
+            <p className="mt-4">
+              Hosted by Radici a Moncalieri we organized a three day gathering to eat, drink, laugh, cry, sing, sleep and take home (and share with others) lessons about resilience and strength from nature, other communities, and cultures that are successfully facing challenges today.
+            </p>
+          </div>
+          <div className="absolute overflow-hidden rounded-lg" style={{ left: 616, top: 1850, width: 244, height: 300 }}>
             <img src="/images/gathering-care-cn0302.png" alt="Community care gathering" className="w-full h-full object-cover object-bottom" />
           </div>
-          <div className="absolute overflow-hidden rounded-lg" style={{ left: 894, top: 2090, width: 378, height: 300 }}>
+          <div className="absolute overflow-hidden rounded-lg" style={{ left: 894, top: 1850, width: 378, height: 300 }}>
             <img src="/images/gathering-care-cn0303.png" alt="Community care gathering" className="w-full h-full object-cover object-bottom" />
           </div>
 
           {/* Transformative learning */}
-          <div className="absolute font-[family-name:var(--font-heading)] text-[29px] text-white leading-[1.216]" style={{ left: 160, top: 2557, width: 436 }}>
-            <p>Transformative learning experiences</p>
+          <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 160, top: 2496, width: 436 }}>
+            <p className="font-[family-name:var(--font-heading)] leading-[1.216]">Transformative learning experiences</p>
+            <p className="mt-4">
+              We co-organized the Global Doughnut Days Mexico 2025, a three day gathering focused on approaching alternative economic frameworks and practices - using the Doughnut Economics framework as guide, together with Coalición Tricolor, a member of the Doughnut Economics Action Lab community. The event included and serviced academics, government officials, business leaders and financiers.
+            </p>
           </div>
-          <p className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 616, top: 2557, width: 664 }}>
-            We co-organized the Global Doughnut Days Mexico 2025, a three day gathering focused on approaching alternative economic frameworks and practices - using the Doughnut Economics framework as guide, together with Coalición Tricolor, a member of the Doughnut Economics Action Lab community. The event included and serviced academics, government officials, business leaders and financiers.
-          </p>
-          <div className="absolute overflow-x-auto overflow-y-clip" style={{ left: 616, top: 2912, width: 656, height: 350 }}>
+          <div className="absolute overflow-x-auto overflow-y-clip" style={{ left: 616, top: 2496, width: 656, height: 350 }}>
             <div className="absolute" style={{ left: 0, top: 1, width: 278, height: 347 }}>
               <img src="/images/gathering-doughnut-1.png" alt="Doughnut gathering" className="w-full h-full object-cover" />
             </div>
@@ -96,7 +98,7 @@ export default function GatheringsPage() {
           </div>
 
           {/* Newsletter */}
-          <div className="absolute bg-white" style={{ left: 0, top: 3378, width: 1441, height: 497 }}>
+          <div className="absolute bg-white" style={{ left: 0, top: 3236, width: 1441, height: 497 }}>
             <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216] tracking-[0.36px]" style={{ left: 160, top: 155 }}>Join to Newsletter</p>
             <h2 className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216] tracking-[0.58px]" style={{ left: 160, top: 188, width: 436 }}>
               Lets Co-create<br />together
@@ -113,7 +115,7 @@ export default function GatheringsPage() {
           </div>
 
           {/* Footer */}
-          <div className="absolute bg-[#0070f9] shadow-[0px_-1px_4px_0px_rgba(0,0,0,0.25)]" style={{ left: 0, top: 3875, width: 1440, height: 105 }}>
+          <div className="absolute bg-[#0070f9] shadow-[0px_-1px_4px_0px_rgba(0,0,0,0.25)]" style={{ left: 0, top: 3733, width: 1440, height: 105 }}>
             <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[17px] text-black leading-[1.216]" style={{ left: 160, top: 34 }}>
               Cambio natural CC BY-NC-ND 4.0
             </p>

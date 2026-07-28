@@ -42,7 +42,7 @@ export default function HomePage() {
             style={{ left: 1136, top: 123, width: 424, height: 446 }} />
 
           {/* Hero question */}
-          <div className="absolute" style={{ left: 261, top: 290, width: 918 }}>
+          <div className="absolute" style={{ left: 261, top: 261, width: 918 }}>
             <p className="font-[family-name:var(--font-body)] text-[29px] text-black leading-[100.5%]">
               ¿How do we meet and collaborate to lead towards agree
             </p>
