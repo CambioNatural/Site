@@ -59,8 +59,17 @@ export default function HomePage() {
           {/* Divider */}
           <div className="absolute bg-black/10" style={{ left: 0, top: 677, width: 1440, height: 1 }} />
 
+          {/* TOGETHER wordmark */}
+          <div className="absolute" style={{ left: 389, top: 760, width: 663, height: 106 }}>
+            <img src="/images/hero-wordmark-together.svg" alt="HERE IS THE DEAL, WE CAN ONLY ACHIEVE IT, TOGETHER" className="w-full h-full object-contain" />
+          </div>
+
+          <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black text-center leading-[100.5%]" style={{ left: 249, top: 1000, width: 943 }}>
+            This is how we do it together
+          </p>
+
           {/* "We are a collective" text */}
-          <div className="absolute" style={{ left: 160, top: 760, width: 664 }}>
+          <div className="absolute" style={{ left: 160, top: 1228, width: 664 }}>
             <p className="font-[family-name:var(--font-body)] text-[29px] text-black leading-[1.216]">
               <span className="font-[family-name:var(--font-heading)]">We are a collective supporting bridge builders</span>
               {" "}and caregivers with technology, gatherings and community. We bring wisdom and practice from the margins to the focus of transformative actions guided by reciprocity, mutual care and regeneration.
@@ -68,18 +77,9 @@ export default function HomePage() {
           </div>
 
           {/* Bridge photo — right of "We are" text */}
-          <div className="absolute overflow-hidden rounded-lg" style={{ left: 848, top: 760, width: 431, height: 271 }}>
+          <div className="absolute overflow-hidden rounded-lg" style={{ left: 848, top: 1228, width: 431, height: 271 }}>
             <img src="/images/hero-photo-subtract.png" alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover" />
           </div>
-
-          {/* TOGETHER wordmark */}
-          <div className="absolute" style={{ left: 389, top: 1230, width: 663, height: 106 }}>
-            <img src="/images/hero-wordmark-together.svg" alt="HERE IS THE DEAL, WE CAN ONLY ACHIEVE IT, TOGETHER" className="w-full h-full object-contain" />
-          </div>
-
-          <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black text-center leading-[100.5%]" style={{ left: 249, top: 1470, width: 943 }}>
-            This is how we do it together
-          </p>
 
           {/* Cross-sector Collaboration */}
           <h2 className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[100.5%]" style={{ left: 160, top: 1590, width: 860 }}>
