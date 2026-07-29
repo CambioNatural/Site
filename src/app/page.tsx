@@ -42,7 +42,7 @@ export default function HomePage() {
             style={{ left: 1136, top: 123, width: 424, height: 446 }} />
 
           {/* Hero question */}
-          <div className="absolute" style={{ left: 261, top: 261, width: 918 }}>
+          <div className="absolute" style={{ left: 261, top: 222, width: 918 }}>
             <p className="font-[family-name:var(--font-body)] text-[29px] text-black leading-[100.5%]">
               ¿How do we meet and collaborate to lead towards agree
             </p>
@@ -52,12 +52,12 @@ export default function HomePage() {
           </div>
 
           {/* TOGETHER wordmark */}
-          <div className="absolute" style={{ left: 160, top: 495, width: 663, height: 106 }}>
+          <div className="absolute" style={{ left: 160, top: 421, width: 663, height: 106 }}>
             <img src="/images/hero-wordmark-together.svg" alt="HERE IS THE DEAL, WE CAN ONLY ACHIEVE IT, TOGETHER" className="w-full h-full object-contain" />
           </div>
 
           {/* Pink dots circle — to the right of TOGETHER wordmark */}
-          <div className="absolute overflow-hidden rounded-full pointer-events-none" style={{ left: 871, top: 443, width: 210, height: 210 }}>
+          <div className="absolute overflow-hidden rounded-full pointer-events-none" style={{ left: 871, top: 369, width: 210, height: 210 }}>
             <img src="/images/cn-0104-2.png" alt="" aria-hidden className="w-full h-full object-cover" />
           </div>
 
@@ -167,7 +167,7 @@ export default function HomePage() {
             className="absolute pointer-events-none"
             style={{ right: -20, top: 0, width: 93, height: 98 }} />
 
-          <div className="relative px-4 pt-6 pb-6 z-10">
+          <div className="relative px-4 pb-6 z-10" style={{ paddingTop: 20 }}>
             <p className="font-[family-name:var(--font-body)] text-[20px] text-black leading-[1.2]">
               ¿How do we meet and collaborate to lead towards a
             </p>
