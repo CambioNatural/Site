@@ -28,8 +28,8 @@ export default function HomePage() {
 
       {/* ── DESKTOP ────────────────────────────────────────────── */}
       <main className="hidden md:block">
-        <DesktopScale height={3762}>
-        <div className="relative" style={{ width: 1440, height: 3762 }}>
+        <DesktopScale height={4165}>
+        <div className="relative" style={{ width: 1440, height: 4165 }}>
 
           {/* Nature leaf SVG — left bleed */}
           <img src="/images/nature-svg-white.svg" alt="" aria-hidden
@@ -51,11 +51,6 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* Pink dots circle — center decoration between hero and "We are" */}
-          <div className="absolute overflow-hidden rounded-full pointer-events-none" style={{ left: 610, top: 430, width: 320, height: 320 }}>
-            <img src="/images/cn-0104-2.png" alt="" aria-hidden className="w-full h-full object-cover" />
-          </div>
-
           {/* Divider */}
           <div className="absolute bg-black/10" style={{ left: 0, top: 677, width: 1440, height: 1 }} />
 
@@ -64,12 +59,13 @@ export default function HomePage() {
             <img src="/images/hero-wordmark-together.svg" alt="HERE IS THE DEAL, WE CAN ONLY ACHIEVE IT, TOGETHER" className="w-full h-full object-contain" />
           </div>
 
-          <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black text-center leading-[100.5%]" style={{ left: 249, top: 1000, width: 943 }}>
-            This is how we do it together
-          </p>
+          {/* Pink dots circle — center decoration below TOGETHER wordmark */}
+          <div className="absolute overflow-hidden rounded-full pointer-events-none" style={{ left: 610, top: 949, width: 320, height: 320 }}>
+            <img src="/images/cn-0104-2.png" alt="" aria-hidden className="w-full h-full object-cover" />
+          </div>
 
           {/* "We are a collective" text */}
-          <div className="absolute" style={{ left: 160, top: 1228, width: 664 }}>
+          <div className="absolute" style={{ left: 160, top: 1468, width: 664 }}>
             <p className="font-[family-name:var(--font-body)] text-[29px] text-black leading-[1.216]">
               <span className="font-[family-name:var(--font-heading)]">We are a collective supporting bridge builders</span>
               {" "}and caregivers with technology, gatherings and community. We bring wisdom and practice from the margins to the focus of transformative actions guided by reciprocity, mutual care and regeneration.
@@ -77,45 +73,49 @@ export default function HomePage() {
           </div>
 
           {/* Bridge photo — right of "We are" text */}
-          <div className="absolute overflow-hidden rounded-lg" style={{ left: 848, top: 1228, width: 431, height: 271 }}>
+          <div className="absolute overflow-hidden rounded-lg" style={{ left: 848, top: 1468, width: 431, height: 271 }}>
             <img src="/images/hero-photo-subtract.png" alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover" />
           </div>
 
+          <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black text-center leading-[100.5%]" style={{ left: 249, top: 1873, width: 943 }}>
+            This is how we do it together
+          </p>
+
           {/* Cross-sector Collaboration */}
-          <h2 className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[100.5%]" style={{ left: 160, top: 1590, width: 860 }}>
+          <h2 className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[100.5%]" style={{ left: 160, top: 1993, width: 860 }}>
             Cross-sector Collaboration Framework
           </h2>
-          <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216]" style={{ left: 160, top: 1684, width: 860 }}>
+          <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216]" style={{ left: 160, top: 2087, width: 860 }}>
             From the experience of TeamUp, a new cross-sectoral approach to development cooperation in Uganda, we co-designed a Cross-sector Collaboration Management Framework and Toolkit. It is aimed at supporting that young people collaborate with local government, civil society, NGOs and private companies to come together and engage in a purposeful way guided by the principles of Planetary Health and Doughnut Economics.
           </p>
-          <div className="absolute overflow-hidden rounded-full" style={{ left: 1072, top: 1590, width: 184, height: 195 }}>
+          <div className="absolute overflow-hidden rounded-full" style={{ left: 1072, top: 1993, width: 184, height: 195 }}>
             <img src="/images/cn-0104-2.png" alt="" aria-hidden className="w-full h-full object-cover" />
           </div>
 
           {/* Global Doughnut México */}
-          <div className="absolute overflow-hidden rounded-full" style={{ left: 160, top: 2080, width: 209, height: 209 }}>
+          <div className="absolute overflow-hidden rounded-full" style={{ left: 160, top: 2483, width: 209, height: 209 }}>
             <img src="/images/cn-0105-1.png" alt="" aria-hidden className="w-full h-full object-cover" />
           </div>
-          <h2 className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 390, top: 2080, width: 664 }}>
+          <h2 className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 390, top: 2483, width: 664 }}>
             Global Doughnut méxico
           </h2>
-          <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[100.5%]" style={{ left: 390, top: 2133, width: 890 }}>
+          <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[100.5%]" style={{ left: 390, top: 2536, width: 890 }}>
             We co-organized the three day gathering focused on approaching alternative economic frameworks and practices - using the Doughnut Economics framework as guide, together with Coalición Tricolor, a member of the Doughnut Economics Action Lab community.
           </p>
 
           {/* Media Club */}
-          <h2 className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 159, top: 2490, width: 433 }}>
+          <h2 className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 159, top: 2893, width: 433 }}>
             Media Club
           </h2>
-          <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[100.5%]" style={{ left: 160, top: 2543, width: 890 }}>
+          <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[100.5%]" style={{ left: 160, top: 2946, width: 890 }}>
             A space for honest, thoughtful conversations about the media that shape our lives. We explore how personal choices connect with larger structures like power, governance and earths natural systems, and what it means to act with responsibility in a world that asks us to rethink how we live and relate to one another.
           </p>
-          <div className="absolute overflow-hidden rounded-full" style={{ left: 1074, top: 2500, width: 206, height: 206 }}>
+          <div className="absolute overflow-hidden rounded-full" style={{ left: 1074, top: 2903, width: 206, height: 206 }}>
             <img src="/images/cn-0106-1.png" alt="" aria-hidden className="w-full h-full object-cover" />
           </div>
 
           {/* Article card */}
-          <div className="absolute rounded-[11px] bg-[#f2d607]" style={{ left: 364, top: 2840, width: 712, height: 214 }}>
+          <div className="absolute rounded-[11px] bg-[#f2d607]" style={{ left: 364, top: 3243, width: 712, height: 214 }}>
             <div className="absolute overflow-hidden rounded" style={{ left: 272, top: 59, width: 208, height: 155 }}>
               <img src="/images/article-bdfm.png" alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover" />
             </div>
@@ -132,7 +132,7 @@ export default function HomePage() {
           </div>
 
           {/* Newsletter */}
-          <div className="absolute bg-white" style={{ left: -1, top: 3160, width: 1441, height: 497 }}>
+          <div className="absolute bg-white" style={{ left: -1, top: 3563, width: 1441, height: 497 }}>
             <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216] tracking-[0.36px]" style={{ left: 159, top: 155 }}>Join to Newsletter</p>
             <h2 className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216] tracking-[0.58px]" style={{ left: 159, top: 188, width: 436 }}>
               Lets Co-create<br />together
@@ -149,7 +149,7 @@ export default function HomePage() {
           </div>
 
           {/* Footer */}
-          <div className="absolute bg-white shadow-[0px_-1px_4px_0px_rgba(0,0,0,0.25)]" style={{ left: 0, top: 3657, width: 1440, height: 105 }}>
+          <div className="absolute bg-white shadow-[0px_-1px_4px_0px_rgba(0,0,0,0.25)]" style={{ left: 0, top: 4060, width: 1440, height: 105 }}>
             <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[17px] text-black leading-[1.216]" style={{ left: 160, top: 34 }}>
               Cambio natural CC BY-NC-ND 4.0
             </p>
@@ -162,7 +162,7 @@ export default function HomePage() {
       <main className="md:hidden flex flex-col bg-white overflow-x-hidden">
 
         {/* Hero */}
-        <div className="relative w-full overflow-hidden" style={{ minHeight: 280 }}>
+        <div className="relative w-full overflow-hidden" style={{ minHeight: 174 }}>
           <img src="/images/nature-svg-white.svg" alt="" aria-hidden
             className="absolute pointer-events-none"
             style={{ left: -55, top: 43, width: 132, height: 131 }} />
@@ -170,7 +170,7 @@ export default function HomePage() {
             className="absolute pointer-events-none"
             style={{ right: -20, top: 0, width: 93, height: 98 }} />
 
-          <div className="relative px-4 pt-6 pb-4 z-10">
+          <div className="relative px-4 pt-6 pb-6 z-10">
             <p className="font-[family-name:var(--font-body)] text-[20px] text-black leading-[1.2]">
               ¿How do we meet and collaborate to lead towards a
             </p>
@@ -178,21 +178,22 @@ export default function HomePage() {
               desirable future for all and the planet?
             </p>
           </div>
-
-          <div className="relative flex gap-3 px-4 pb-6 z-10 items-start">
-            <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.35]" style={{ width: 212 }}>
-              <span className="font-[family-name:var(--font-heading)]">We are a collective supporting bridge builders</span>
-              {" "}and caregivers with technology, gatherings and community. We bring wisdom and practice from the margins to the focus of transformative actions guided by reciprocity, mutual care and regeneration.
-            </p>
-            <div className="overflow-hidden rounded-lg shrink-0" style={{ width: 136, height: 111 }}>
-              <img src="/images/hero-photo-subtract.png" alt="" aria-hidden className="w-full h-full object-cover" />
-            </div>
-          </div>
         </div>
 
         {/* TOGETHER wordmark */}
         <div className="px-10 pb-5">
           <img src="/images/hero-wordmark-together.svg" alt="HERE IS THE DEAL, WE CAN ONLY ACHIEVE IT, TOGETHER" className="w-full object-contain" />
+        </div>
+
+        {/* We are + bridge photo */}
+        <div className="flex gap-3 px-4 pb-6 items-start">
+          <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.35]" style={{ width: 212 }}>
+            <span className="font-[family-name:var(--font-heading)]">We are a collective supporting bridge builders</span>
+            {" "}and caregivers with technology, gatherings and community. We bring wisdom and practice from the margins to the focus of transformative actions guided by reciprocity, mutual care and regeneration.
+          </p>
+          <div className="overflow-hidden rounded-lg shrink-0" style={{ width: 136, height: 111 }}>
+            <img src="/images/hero-photo-subtract.png" alt="" aria-hidden className="w-full h-full object-cover" />
+          </div>
         </div>
 
         <div className="px-4 pb-6 text-center">
