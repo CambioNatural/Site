@@ -42,22 +42,22 @@ export default function HomePage() {
             style={{ left: 1136, top: 123, width: 424, height: 446 }} />
 
           {/* Hero question */}
-          <div className="absolute" style={{ left: 261, top: 222, width: 918 }}>
+          <div className="absolute" style={{ left: 313, top: 189, width: 918 }}>
             <p className="font-[family-name:var(--font-body)] text-[29px] text-black leading-[100.5%]">
-              ¿How do we meet and collaborate to lead towards agree
+              ¿How do we meet and collaborate to lead towards
             </p>
             <p className="font-[family-name:var(--font-heading)] uppercase text-[33px] text-black leading-[100.5%] mt-1">
-              desirable future&nbsp; for all and the planet?
+              more desirable futures for all and the planet?
             </p>
           </div>
 
           {/* TOGETHER wordmark */}
-          <div className="absolute" style={{ left: 160, top: 421, width: 663, height: 106 }}>
+          <div className="absolute" style={{ left: 192, top: 358, width: 663, height: 106 }}>
             <img src="/images/hero-wordmark-together.svg" alt="HERE IS THE DEAL, WE CAN ONLY ACHIEVE IT, TOGETHER" className="w-full h-full object-contain" />
           </div>
 
           {/* Pink dots circle — to the right of TOGETHER wordmark */}
-          <div className="absolute overflow-hidden rounded-full pointer-events-none" style={{ left: 871, top: 369, width: 210, height: 210 }}>
+          <div className="absolute overflow-hidden rounded-full pointer-events-none" style={{ left: 903, top: 306, width: 210, height: 210 }}>
             <img src="/images/cn-0104-2.png" alt="" aria-hidden className="w-full h-full object-cover" />
           </div>
 
@@ -175,10 +175,10 @@ export default function HomePage() {
 
           <div className="relative px-4 pb-6 z-10" style={{ paddingTop: 20 }}>
             <p className="font-[family-name:var(--font-body)] text-[20px] text-black leading-[1.2]">
-              ¿How do we meet and collaborate to lead towards a
+              ¿How do we meet and collaborate to lead towards
             </p>
             <p className="font-[family-name:var(--font-heading)] uppercase text-[22px] text-black leading-[1.1] mt-1">
-              desirable future for all and the planet?
+              more desirable futures for all and the planet?
             </p>
           </div>
         </div>
