@@ -12,7 +12,7 @@ const modules: { id: Module; label: string; href: string; icon: string }[] = [
 export default function AdminIdentity({ active, dirty = false, pending = false, access }: { active?: Module; dirty?: boolean; pending?: boolean; access?:CmsAccess }) {
   return <div className="cms-identity">
     <div className="cms-brand" aria-label="Cambio Natural"><span>cambio</span><span>natural</span></div>
-    <span className="cms-workspace-name">Espacio editorial</span>
+    <span className="cms-workspace-name">Administración</span>
     {active && <nav aria-label="Módulos del CMS">{modules.filter(item=>item.id==='users'?access?.admin:item.id==='crm'?access?.modules.includes('crm'):!access||access.modules.includes(item.id)).map(item => <Link key={item.id} href={item.href} aria-current={active === item.id ? 'page' : undefined} aria-disabled={pending || undefined} onClick={event => {
       if (pending || (dirty && active !== item.id && !window.confirm('Hay cambios sin guardar. ¿Descartarlos para cambiar de módulo?'))) event.preventDefault();
     }}><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" aria-hidden="true"><path d={item.icon}/></svg>{item.label}</Link>)}</nav>}
