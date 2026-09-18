@@ -7,6 +7,6 @@
 .nav button:focus-visible { outline:3px solid #b8004c; outline-offset:2px; }
 .label { position:absolute; right:calc(100% + 10px); width:max-content; max-width:min(220px,65vw); padding:7px 12px; border-radius:5px; background:#20211c; color:white; font-size:13px; font-weight:500; line-height:1.4; text-align:right; opacity:0; visibility:hidden; pointer-events:none; transition:opacity 120ms ease; }
 .nav button:hover .label,.nav button:focus-visible .label { opacity:1; visibility:visible; }
-@media(max-width:767px) { .nav { right:2px; } }
+@media(max-width:767px) { .nav { display:none; } }
 @media(prefers-reduced-motion:reduce) { .dot,.label { transition:none; } }
 @media(max-height:420px) { .nav { max-height:90dvh; overflow-y:auto; } }

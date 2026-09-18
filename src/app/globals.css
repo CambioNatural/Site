@@ -45,6 +45,3 @@ body {
 @media (prefers-color-scheme: dark) {
   /* site is light-only by design */
 }
-
-/* Leave room for the section controls beside the mobile reading column. */
-@media(max-width:767px) { .scroll-navigation-page { padding-right:48px; } }
