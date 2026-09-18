@@ -1,0 +1,47 @@
+begin;
+alter table public.cms_module_permissions drop constraint cms_module_permissions_module_check;
+alter table public.cms_module_permissions add constraint cms_module_permissions_module_check check(module in ('home','blog','popups','crm'));
+create or replace function cms_private.set_permissions(p_user uuid,p_modules text[],p_expected text[]) returns void language plpgsql security definer set search_path='' as $$
+declare previous text[]; expected text[]; desired text[];
+begin
+ if auth.uid() is null or not public.cms_is_admin() then raise exception 'FORBIDDEN' using errcode='42501'; end if;
+ if p_modules is null or p_expected is null or exists(select 1 from unnest(p_modules) m where m is null or m not in ('home','blog','popups','crm')) then raise exception 'INVALID_PERMISSIONS'; end if;
+ perform pg_advisory_xact_lock(9472703);
+ if not exists(select 1 from auth.users where id=p_user) then raise exception 'USER_NOT_FOUND'; end if;
+ if exists(select 1 from public.cms_admins where user_id=p_user) then raise exception 'ADMIN_PROTECTED'; end if;
+ select coalesce(array_agg(module order by module),'{}') into previous from public.cms_module_permissions where user_id=p_user;
+ select coalesce(array_agg(distinct m order by m),'{}') into expected from unnest(p_expected) m;
+ select coalesce(array_agg(distinct m order by m),'{}') into desired from unnest(p_modules) m;
+ if previous is distinct from expected then raise exception 'VERSION_CONFLICT'; end if;
+ delete from public.cms_module_permissions where user_id=p_user;
+ insert into public.cms_module_permissions(user_id,module) select p_user,unnest(desired);
+ insert into cms_private.permission_audit(actor,target,before_modules,after_modules) values(auth.uid(),p_user,previous,desired);
+end $$;
+
+create table public.crm_companies(id uuid primary key default gen_random_uuid(), name text not null check(length(trim(name)) between 1 and 200), owner text not null default '' check(length(owner)<=200), notes text not null default '' check(length(notes)<=10000), archived boolean not null default false, version integer not null default 1 check(version>0), created_at timestamptz not null default now(), updated_at timestamptz not null default now(), website text not null default '', industry text not null default '', city text not null default '');
+create table public.crm_contacts(id uuid primary key default gen_random_uuid(), name text not null check(length(trim(name)) between 1 and 200), owner text not null default '' check(length(owner)<=200), notes text not null default '' check(length(notes)<=10000), archived boolean not null default false, version integer not null default 1 check(version>0), created_at timestamptz not null default now(), updated_at timestamptz not null default now(), company_id uuid references public.crm_companies(id), email text not null default '', phone text not null default '', job_title text not null default '', source text not null default '', status text not null default 'lead' check(status in ('lead','qualified','customer','partner','inactive')));
+create table public.crm_deals(id uuid primary key default gen_random_uuid(), name text not null check(length(trim(name)) between 1 and 200), owner text not null default '' check(length(owner)<=200), notes text not null default '' check(length(notes)<=10000), archived boolean not null default false, version integer not null default 1 check(version>0), created_at timestamptz not null default now(), updated_at timestamptz not null default now(), company_id uuid references public.crm_companies(id), contact_id uuid references public.crm_contacts(id), process text not null default 'sales' check(process in ('sales','partnership')), stage text not null default 'new' check(stage in ('new','qualified','proposal','negotiation','won','lost')), amount numeric(14,2) not null default 0 check(amount>=0), currency text not null default 'MXN' check(currency in ('MXN','USD','EUR')), close_date date);
+create table public.crm_activities(id uuid primary key default gen_random_uuid(), name text not null check(length(trim(name)) between 1 and 200), owner text not null default '' check(length(owner)<=200), notes text not null default '' check(length(notes)<=10000), archived boolean not null default false, version integer not null default 1 check(version>0), created_at timestamptz not null default now(), updated_at timestamptz not null default now(), company_id uuid references public.crm_companies(id), contact_id uuid references public.crm_contacts(id), deal_id uuid references public.crm_deals(id), type text not null default 'task' check(type in ('task','call','meeting','email')), status text not null default 'pending' check(status in ('pending','done','cancelled')), due_date date);
+alter table public.crm_companies enable row level security;
+revoke all on public.crm_companies from public,anon,authenticated;
+grant select,insert,update on public.crm_companies to authenticated;
+create policy crm_access on public.crm_companies for all to authenticated using ((select public.cms_can_manage('crm'))) with check ((select public.cms_can_manage('crm')));
+alter table public.crm_contacts enable row level security;
+revoke all on public.crm_contacts from public,anon,authenticated;
+grant select,insert,update on public.crm_contacts to authenticated;
+create policy crm_access on public.crm_contacts for all to authenticated using ((select public.cms_can_manage('crm'))) with check ((select public.cms_can_manage('crm')));
+alter table public.crm_deals enable row level security;
+revoke all on public.crm_deals from public,anon,authenticated;
+grant select,insert,update on public.crm_deals to authenticated;
+create policy crm_access on public.crm_deals for all to authenticated using ((select public.cms_can_manage('crm'))) with check ((select public.cms_can_manage('crm')));
+alter table public.crm_activities enable row level security;
+revoke all on public.crm_activities from public,anon,authenticated;
+grant select,insert,update on public.crm_activities to authenticated;
+create policy crm_access on public.crm_activities for all to authenticated using ((select public.cms_can_manage('crm'))) with check ((select public.cms_can_manage('crm')));
+create index on public.crm_contacts(company_id);
+create index on public.crm_deals(company_id);
+create index on public.crm_deals(contact_id);
+create index on public.crm_activities(company_id);
+create index on public.crm_activities(contact_id);
+create index on public.crm_activities(deal_id);
+commit;

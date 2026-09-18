@@ -1,0 +1,42 @@
+begin;
+select set_config('test.crm_admin',(select user_id::text from public.cms_admins limit 1),true);
+select set_config('test.crm_user',gen_random_uuid()::text,true);
+insert into auth.users(id,email) values(current_setting('test.crm_user')::uuid,'crm-test-'||current_setting('test.crm_user')||'@example.invalid');
+select set_config('request.jwt.claim.sub',current_setting('test.crm_admin'),true);
+set local role authenticated;
+select public.cms_set_permissions(current_setting('test.crm_user')::uuid,array['crm'],'{}');
+reset role;
+select set_config('request.jwt.claim.sub',current_setting('test.crm_user'),true);
+set local role authenticated;
+do $$ declare company uuid; contact uuid; deal uuid; affected int; begin
+ insert into public.crm_companies(name) values('CRM rollback company') returning id into company;
+ insert into public.crm_contacts(name,company_id) values('CRM rollback contact',company) returning id into contact;
+ insert into public.crm_deals(name,company_id,contact_id,process,amount) values('CRM rollback deal',company,contact,'partnership',500) returning id into deal;
+ insert into public.crm_activities(name,deal_id) values('CRM rollback follow-up',deal);
+ update public.crm_deals set archived=true,version=2 where id=deal and version=1;
+ update public.crm_deals set name='Stale edit' where id=deal and version=1;
+ get diagnostics affected=row_count;
+ if affected<>0 then raise exception 'STALE_EDIT_ACCEPTED';end if;
+ begin insert into public.crm_deals(name,amount) values('Negative',-1);raise exception 'NEGATIVE_ACCEPTED';exception when check_violation then null;end;
+ begin insert into public.crm_contacts(name,company_id) values('Orphan',gen_random_uuid());raise exception 'ORPHAN_ACCEPTED';exception when foreign_key_violation then null;end;
+ begin perform public.cms_set_permissions(auth.uid(),array['home'],array['crm']);raise exception 'SELF_ESCALATION';exception when insufficient_privilege then null;end;
+end $$;
+reset role;
+select set_config('request.jwt.claim.sub',current_setting('test.crm_admin'),true);
+set local role authenticated;
+select public.cms_set_permissions(current_setting('test.crm_user')::uuid,array['blog'],array['crm']);
+reset role;
+select set_config('request.jwt.claim.sub',current_setting('test.crm_user'),true);
+set local role authenticated;
+do $$ begin
+ if exists(select 1 from public.crm_contacts) then raise exception 'CRM_LEAK';end if;
+ begin insert into public.crm_companies(name) values('Forbidden');raise exception 'WRITE_ALLOWED';exception when insufficient_privilege then null;end;
+end $$;
+reset role;
+set local role anon;
+do $$ begin
+ begin perform * from public.crm_contacts;raise exception 'ANON_LEAK';exception when insufficient_privilege then null;end;
+end $$;
+reset role;
+select 'PASS: CRM CRUD, relations, amounts, stale edits, module isolation, revocation and anonymous denial' as result;
+rollback;
