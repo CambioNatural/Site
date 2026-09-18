@@ -1,3 +1,4 @@
+import {AdminPreviewBar} from '@/components/admin/AdminNotice';
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import HomeLanding from '@/components/home/HomeLanding';
@@ -9,5 +10,5 @@ export default async function Page(){
  const {document,version}=await getEditorData();
  const images=[document.home.hero.wordmark,document.home.about.image,...document.home.initiatives.map(i=>i.image),document.home.article.image,document.home.newsletter.image];
  for(const image of images)if(image.src.startsWith('draft:'))image.src=`/admin/media?path=${encodeURIComponent(image.src.slice(6))}`;
- return <><aside className="cms-preview">Vista previa del borrador {version} · <a href="/admin">Volver al editor</a></aside><HomeLanding content={document.home} navigation={document.navigation} preview /></>;
+ return <><AdminPreviewBar version={version}/><HomeLanding content={document.home} navigation={document.navigation} preview /></>;
 }

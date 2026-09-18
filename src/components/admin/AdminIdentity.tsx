@@ -1,4 +1,6 @@
 'use client';
+import {useAdminLanguage,LanguageToggle} from '@/components/admin/AdminLanguage';
+
 import Link from 'next/link';
 import type {CmsAccess} from '@/lib/cms/permissions';
 type Module = 'home' | 'blog' | 'popups' | 'users' | 'crm';
@@ -10,11 +12,13 @@ const modules: { id: Module; label: string; href: string; icon: string }[] = [
   { id: 'popups', label: 'Pop-ups', href: '/admin/manage/popups', icon: 'M3 5h18v14H3z M3 9h18 M7 14h10' },
 ];
 export default function AdminIdentity({ active, dirty = false, pending = false, access }: { active?: Module; dirty?: boolean; pending?: boolean; access?:CmsAccess }) {
+ const {t}=useAdminLanguage();
+
   return <div className="cms-identity">
     <div className="cms-brand" aria-label="Cambio Natural"><span>cambio</span><span>natural</span></div>
-    <span className="cms-workspace-name">Administración</span>
-    {active && <nav aria-label="Módulos del CMS">{modules.filter(item=>item.id==='users'?access?.admin:item.id==='crm'?access?.modules.includes('crm'):!access||access.modules.includes(item.id)).map(item => <Link key={item.id} href={item.href} aria-current={active === item.id ? 'page' : undefined} aria-disabled={pending || undefined} onClick={event => {
-      if (pending || (dirty && active !== item.id && !window.confirm('Hay cambios sin guardar. ¿Descartarlos para cambiar de módulo?'))) event.preventDefault();
-    }}><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" aria-hidden="true"><path d={item.icon}/></svg>{item.label}</Link>)}</nav>}
-  </div>;
+    <span className="cms-workspace-name">{t("Administración")}</span>
+    {active && <nav aria-label={t("Módulos del CMS")}>{modules.filter(item=>item.id==='users'?access?.admin:item.id==='crm'?access?.modules.includes('crm'):!access||access.modules.includes(item.id)).map(item => <Link key={item.id} href={item.href} aria-current={active === item.id ? 'page' : undefined} aria-disabled={pending || undefined} onClick={event => {
+      if (pending || (dirty && active !== item.id && !window.confirm(t("Hay cambios sin guardar. ¿Descartarlos para cambiar de módulo?")))) event.preventDefault();
+    }}><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" aria-hidden="true"><path d={item.icon}/></svg>{t(item.label)}</Link>)}</nav>}
+  <LanguageToggle/></div>;
 }
