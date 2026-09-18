@@ -41,3 +41,23 @@ Nueve pruebas del esquema aprobadas; TypeScript (tipos explícitos) y ESLint de 
 La revisión visual y el recorrido autenticado de los nuevos formularios quedan pendientes por la restricción de control del navegador de esta tarea. No se crearon campañas ni entradas reales. La portada conserva borrador 4 y publicación 3. No se realizó despliegue.
 
 Security Advisor: sin errores ni nuevos hallazgos de tablas; persiste el aviso previo de [protección contra contraseñas filtradas desactivada](https://supabase.com/docs/guides/auth/password-security#password-strength-and-leaked-password-protection).
+
+## Editor visual del blog
+
+El cuerpo de las entradas usa Tiptap. Selecciona texto y aplica negrita, cursiva,
+subrayado, tachado o enlaces. El selector de párrafo permite encabezados H2–H4;
+el título de la entrada conserva el nivel principal. También hay listas, citas,
+separadores, limpieza de formato y deshacer/rehacer. Los controles siguen el idioma
+seleccionado en el administrador. La vista previa local incluye el formato y los
+cambios todavía sin guardar.
+
+Las entradas anteriores permanecen compatibles. `content.body` conserva una
+versión de texto plano y `content.richText`, opcional, guarda el documento de
+formato validado. La API del blog entrega ambos campos; los consumidores actuales
+pueden seguir leyendo `body`. Para presentar el formato, usar `BlogBody` o un
+renderizador del mismo esquema, evitando insertar HTML recibido. No hay una
+migración de base de datos: el documento usa el JSON existente de la entrada.
+
+El servidor valida los tipos de nodos, enlaces, profundidad, tamaño y coincidencia
+entre texto plano y documento. Se conservan el guardado de borradores, publicación,
+control de versiones y permisos existentes.

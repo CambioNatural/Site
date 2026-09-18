@@ -306,6 +306,36 @@ Volver al CMS|Back to CMS
 Volver al editor|Back to editor
 La pantalla está preparada. Falta aplicar la configuración de permisos en Supabase.|This screen is ready. Apply the permission configuration in Supabase to continue.
 Los administradores generales conservan su acceso actual. La asignación de módulos estará disponible cuando se active la configuración.|General administrators retain their access. Module assignment will be available when configuration is activated.
+Contenido de la entrada|Post content
+palabras|words
+min de lectura|min read
+Selecciona texto para darle formato. Puedes pegar texto desde otros documentos.|Select text to format it. You can paste text from other documents.
+Formato del texto|Text formatting
+Estilo del párrafo|Paragraph style
+Párrafo|Paragraph
+Encabezado 2|Heading 2
+Encabezado 3|Heading 3
+Encabezado 4|Heading 4
+Negrita|Bold
+Cursiva|Italic
+Subrayado|Underline
+Tachado|Strikethrough
+Lista con viñetas|Bullet list
+Lista numerada|Numbered list
+Cita|Quote
+Enlace|Link
+Separador|Divider
+Quitar formato|Clear formatting
+Deshacer|Undo
+Rehacer|Redo
+Dirección del enlace|Link URL
+Aplicar enlace|Apply link
+Quitar enlace|Remove link
+Usa un enlace completo https://, http:// o mailto:.|Enter a full https://, http:// or mailto: link.
+Cargando editor…|Loading editor…
+Atajos: ⌘/Ctrl + B para negrita, I para cursiva y Z para deshacer.|Shortcuts: ⌘/Ctrl + B for bold, I for italic and Z to undo.
+El contenido supera el límite de 60,000 caracteres. Reduce el texto antes de guardar.|Content exceeds 60,000 characters. Shorten the text before saving.
+Cambios pendientes|Pending changes
 caracteres|characters
 Los registros archivados se consultan en modo de lectura.|Archived records are read-only.
 Lista|List
