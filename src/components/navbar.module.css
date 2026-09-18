@@ -1,0 +1,18 @@
+.nav { position: sticky; top: 0; z-index: 50; width: 100%; box-shadow: 0 4px 4px rgb(0 0 0 / 12%); }
+.inner { width: min(1120px, calc(100% - 40px)); margin-inline: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; min-height: 78px; gap: 16px; }
+.logo { display: flex; flex-direction: column; font-family: var(--font-heading); text-transform: uppercase; font-size: 23px; line-height: .85; text-align: right; padding-block: 12px; }
+.toggle { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; cursor: pointer; }
+.links { display: none; width: 100%; padding-block: 8px 24px; }
+.open { display: flex; flex-direction: column; gap: 8px; }
+.link, .booking { font-family: var(--font-heading); font-size: 14px; text-transform: uppercase; line-height: 1.4; min-height: 44px; display: inline-flex; align-items: center; overflow-wrap: anywhere; }
+.link { padding-block: 10px; }
+.link:hover, .link[aria-current="page"] { text-decoration: underline; text-underline-offset: 5px; }
+.booking { padding: 14px 22px; border-radius: 12px; justify-content: center; width: fit-content; max-width: 100%; }
+.booking:hover { text-decoration: underline; text-underline-offset: 4px; }
+.nav a:focus-visible, .nav button:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
+@media (min-width: 1024px) {
+  .inner { width: min(1120px, calc(100% - 64px)); min-height: 102px; flex-wrap: nowrap; gap: 40px; }
+  .logo { font-size: 29px; }
+  .toggle { display: none; }
+  .links { display: flex; flex: 1; width: auto; flex-direction: row; align-items: center; justify-content: space-between; gap: 18px; padding: 0; }
+}

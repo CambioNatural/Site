@@ -1,0 +1,8 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {parseEntry,emptyEntry,type PopupContent} from '../src/lib/entries/schema';
+const popup=()=>({...emptyEntry('popups'),slug:'campana',title:'Aviso',body:'Mensaje'}) as PopupContent;
+test('validación de programación y destinos del popup',()=>{const p=popup();assert.doesNotThrow(()=>parseEntry('popups',p));assert.throws(()=>parseEntry('popups',{...p,startsAt:'2026-09-20T00:00:00Z',endsAt:'2026-09-19T00:00:00Z'}));assert.throws(()=>parseEntry('popups',{...p,paths:['/admin']}));assert.throws(()=>parseEntry('popups',{...p,delay:-1}));assert.throws(()=>parseEntry('popups',{...p,paths:[]}));});
+test('botón necesita texto y URL seguros',()=>{const p=popup();assert.throws(()=>parseEntry('popups',{...p,buttonLabel:'Abrir'}));assert.throws(()=>parseEntry('popups',{...p,buttonLabel:'Abrir',url:'javascript:alert(1)'}));assert.doesNotThrow(()=>parseEntry('popups',{...p,buttonLabel:'Abrir',url:'https://example.com'}));});
+test('blog exige slug, título y cuerpo; rechaza campos ajenos',()=>{const b={...emptyEntry('blog'),slug:'mi-nota',title:'Nota',body:'Contenido'};assert.doesNotThrow(()=>parseEntry('blog',b));assert.throws(()=>parseEntry('blog',{...b,slug:'../../admin'}));assert.throws(()=>parseEntry('blog',{...b,body:''}));assert.throws(()=>parseEntry('blog',{...b,published:true}));});
+test('imágenes externas y HTML no entran como medios',()=>{assert.throws(()=>parseEntry('popups',{...popup(),image:'https://otro.example/imagen.svg'}));assert.throws(()=>parseEntry('popups',{...popup(),image:'data:text/html,<script>'}));});

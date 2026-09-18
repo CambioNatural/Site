@@ -1,0 +1,47 @@
+
+> website@0.1.0 build
+> next build
+
+▲ Next.js 16.3.5 (Turbopack)
+- Environments: .env.local
+⚠ Warning: Next.js ignored package-lock.json in /Users/marcelotorres because it is outside the current Git repository (/Users/marcelotorres/Documents/ChatGPT/Cambio Natural Website/site).
+ To use this directory, set `turbopack.root` in your Next.js config.
+
+✓ Running next.config.ts took 3.8s
+- Experiments (use with caution):
+  · serverActions
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 8.7s
+  Running TypeScript ...
+  Finished TypeScript in 4.3s ...
+  Collecting page data using 9 workers ...
+  Generating static pages using 9 workers (0/16) ...
+  Generating static pages using 9 workers (4/16) 
+  Generating static pages using 9 workers (8/16) 
+  Generating static pages using 9 workers (12/16) 
+✓ Generating static pages using 9 workers (16/16) in 1111ms
+  Finalizing page optimization ...
+
+Route (app)           Revalidate  Expire
+┌ ○ /                         5m      1y
+├ ○ /_not-found
+├ ƒ /admin
+├ ○ /admin/login
+├ ƒ /admin/media
+├ ƒ /admin/preview
+├ ○ /admin/recover
+├ ƒ /auth/confirm
+├ ○ /gatherings               5m      1y
+├ ○ /media-club               5m      1y
+├ ○ /robots.txt
+├ ○ /sitemap.xml
+├ ○ /tools                    5m      1y
+└ ○ /we-are                   5m      1y
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

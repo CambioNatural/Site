@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import DesktopScale from "@/components/DesktopScale";
+import SectionDots from "@/components/SectionDots";
 import SubstackEmbed from "@/components/SubstackEmbed";
 
 export const metadata: Metadata = {
@@ -23,11 +24,12 @@ export const metadata: Metadata = {
 
 export default function MediaClubPage() {
   return (
-    <div className="bg-[#17ba4f] flex flex-col overflow-x-hidden">
+    <div className="scroll-navigation-page bg-[#17ba4f] flex flex-col overflow-x-hidden">
       <Navbar bg="bg-[#17ba4f]" textColor="text-black" ctaBg="bg-black" ctaText="text-white" />
+      <SectionDots />
 
       {/* ── DESKTOP ────────────────────────────────────────────── */}
-      <main className="hidden md:block">
+      <main data-scroll-section="Introduction" className="hidden md:block">
         <DesktopScale height={2398}>
         <div className="relative" style={{ width: 1440, height: 2398 }}>
 
@@ -41,8 +43,8 @@ export default function MediaClubPage() {
             {" "}We explore how personal choices connect with larger structures like power, governance and earths natural systems, and what it means to act with responsibility in a world that asks us to rethink how we live and relate to one another.
           </p>
 
-          <p className="absolute font-[family-name:var(--font-body)] text-[29px] text-black leading-[100.5%]" style={{ left: 388, top: 806, width: 892 }}>
-            This reading/listening/observing and conversation circle isn't a traditional book club. It's a place for people who want to understand our moment more deeply and imagine, together, new paths toward collective action. Each session invites us to slow down, pay attention carefully, and engage with ideas in a way that feels grounded. We connect what we read with our own experiences and look for the small openings where change becomes possible.
+          <p data-scroll-section="About the club" className="absolute font-[family-name:var(--font-body)] text-[29px] text-black leading-[100.5%]" style={{ left: 388, top: 806, width: 892 }}>
+            This reading/listening/observing and conversation circle isn&apos;t a traditional book club. It&apos;s a place for people who want to understand our moment more deeply and imagine, together, new paths toward collective action. Each session invites us to slow down, pay attention carefully, and engage with ideas in a way that feels grounded. We connect what we read with our own experiences and look for the small openings where change becomes possible.
           </p>
 
           <p className="absolute font-[family-name:var(--font-body)] text-[29px] text-black leading-[100.5%]" style={{ left: 160, top: 1250, width: 1120 }}>
@@ -57,7 +59,7 @@ export default function MediaClubPage() {
           </div>
 
           {/* Article card */}
-          <div className="absolute rounded-[11px] bg-[#f2d607]" style={{ left: 364, top: 1565, width: 712, height: 214 }}>
+          <div data-scroll-section="Featured article" className="absolute rounded-[11px] bg-[#f2d607]" style={{ left: 364, top: 1565, width: 712, height: 214 }}>
             <div className="absolute overflow-hidden rounded" style={{ left: 272, top: 59, width: 208, height: 155 }}>
               <img src="/images/article-bdfm.png" alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover" />
             </div>
@@ -71,7 +73,7 @@ export default function MediaClubPage() {
             <span className="absolute font-[family-name:var(--font-body)] text-[18px] text-black underline leading-[1.216] cursor-pointer" style={{ left: 24, top: 146 }}>Read me</span>
           </div>
 
-          <p className="absolute font-[family-name:var(--font-body)] text-[29px] text-black leading-[100.5%]" style={{ left: 160, top: 1884, width: 1108 }}>
+          <p data-scroll-section="Shared learning" className="absolute font-[family-name:var(--font-body)] text-[29px] text-black leading-[100.5%]" style={{ left: 160, top: 1884, width: 1108 }}>
             The Media Club is a shared learning space, a place to understand more clearly, question what we assume, and cultivate the ability to act with awareness, care, and imagination within the systems we all depend on.
           </p>
 
@@ -90,7 +92,7 @@ export default function MediaClubPage() {
       </main>
 
       {/* ── MOBILE ────────────────────────────────────────────── */}
-      <main className="md:hidden flex flex-col bg-[#17ba4f]">
+      <main data-scroll-section="Introduction" className="md:hidden flex flex-col bg-[#17ba4f]">
         {/* Hero */}
         <div className="flex gap-3 px-4 pt-6 pb-6 items-start overflow-hidden">
           {/* Decorative stripes — clipped left-bleed column */}
@@ -105,9 +107,9 @@ export default function MediaClubPage() {
         </div>
 
         {/* Body text */}
-        <div className="px-4 pb-6">
+        <div data-scroll-section="About the club" className="px-4 pb-6">
           <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.4] mb-4">
-            This reading/listening/observing and conversation circle isn't a traditional book club. It's a place for people who want to understand our moment more deeply and imagine, together, new paths toward collective action. Each session invites us to slow down, pay attention carefully, and engage with ideas in a way that feels grounded. We connect what we read with our own experiences and look for the small openings where change becomes possible. We meet once every two months for a 90-minute virtual session. The flow is simple but intentional: we begin with a short welcome and an icebreaker that helps us enter the piece of media; then we walk through the key ideas of the piece; after that, we open a guided conversation where everyone can share insights, questions, and reflections; and we close by exploring how these ideas can shape real decisions and real challenges in our daily lives and communities.
+            This reading/listening/observing and conversation circle isn&apos;t a traditional book club. It&apos;s a place for people who want to understand our moment more deeply and imagine, together, new paths toward collective action. Each session invites us to slow down, pay attention carefully, and engage with ideas in a way that feels grounded. We connect what we read with our own experiences and look for the small openings where change becomes possible. We meet once every two months for a 90-minute virtual session. The flow is simple but intentional: we begin with a short welcome and an icebreaker that helps us enter the piece of media; then we walk through the key ideas of the piece; after that, we open a guided conversation where everyone can share insights, questions, and reflections; and we close by exploring how these ideas can shape real decisions and real challenges in our daily lives and communities.
           </p>
 
           {/* Access the club CTA */}
@@ -118,7 +120,7 @@ export default function MediaClubPage() {
         </div>
 
         {/* Article card */}
-        <div className="mx-4 mb-6 rounded-[11px] bg-[#f2d607] p-4">
+        <div data-scroll-section="Featured article" className="mx-4 mb-6 rounded-[11px] bg-[#f2d607] p-4">
           <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.3] mb-1">Article - Substrac</p>
           <div className="flex gap-3">
             <div className="flex-1">
@@ -137,14 +139,14 @@ export default function MediaClubPage() {
         </div>
 
         {/* Shared learning */}
-        <div className="px-4 pb-6">
+        <div data-scroll-section="Shared learning" className="px-4 pb-6">
           <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.4] mb-4">
             The Media Club is a shared learning space, a place to understand more clearly, question what we assume, and cultivate the ability to act with awareness, care, and imagination within the systems we all depend on.
           </p>
         </div>
 
         {/* Newsletter */}
-        <div className="bg-white px-4 py-8">
+        <div data-scroll-section="Newsletter" className="bg-white px-4 py-8">
           <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.3] mb-1">Join to our waiting list for our Newsletter</p>
           <h2 className="font-[family-name:var(--font-heading)] uppercase text-[24px] text-black leading-[1.2] mb-3">
             Lets Co-create<br />together

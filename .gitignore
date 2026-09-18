@@ -46,3 +46,9 @@ next-env.d.ts
 /mobile-*.png
 /design-cn-*.png
 dev-server.log
+
+!.env.example
+
+/demo-cms/dist/
+
+/supabase/.temp/

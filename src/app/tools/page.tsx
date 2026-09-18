@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import DesktopScale from "@/components/DesktopScale";
+import SectionDots from "@/components/SectionDots";
 
 export const metadata: Metadata = {
   title: "Tools",
   description:
-    "Tools and spaces for dialogue and collaboration supporting bridge builders and caregivers — curated resources for nature, economy and technology, guiding how we redefine our relationship with the planet's natural systems.",
+    "Tools and spaces for dialogue and collaboration supporting bridge builders and caregivers — curated resources for nature, economy and technology, guiding how we redefine our relationship with the planet&apos;s natural systems.",
   alternates: { canonical: "/tools" },
   openGraph: {
     url: "/tools",
@@ -22,11 +23,12 @@ export const metadata: Metadata = {
 
 export default function ToolsPage() {
   return (
-    <div className="bg-[#f4e509] flex flex-col overflow-x-hidden">
+    <div className="scroll-navigation-page bg-[#f4e509] flex flex-col overflow-x-hidden">
       <Navbar bg="bg-[#f4e509]" textColor="text-black" ctaBg="bg-black" ctaText="text-[#f4e509]" />
+      <SectionDots />
 
       {/* ── DESKTOP ────────────────────────────────────────────── */}
-      <main className="hidden md:block">
+      <main data-scroll-section="Introduction" className="hidden md:block">
         <DesktopScale height={4018}>
         <div className="relative" style={{ width: 1440, height: 4018 }}>
 
@@ -44,10 +46,10 @@ export default function ToolsPage() {
           </div>
 
           {/* FOR NATURE */}
-          <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 160, top: 806, width: 366 }}>for nature</p>
+          <p data-scroll-section="Nature" className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 160, top: 806, width: 366 }}>for nature</p>
           <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216]" style={{ left: 160, top: 853, width: 436 }}>Tools for nourishing our nature</p>
           <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[100.5%]" style={{ left: 160, top: 904, width: 664 }}>
-            Every day there are more and more phenomena around the world urging us to redefine our relationship with the planet's natural systems. These phenomena remind us that our community, its technology, the economy and nature are closely related planes, complex systems that are interconnected. We realise that sometimes (if not always) slow, intentional actions and loving gestures are more powerful than bold manifestos and urgent calls to action. Transformation cannot be rushed, because it requires connecting mind, heart, hands and soul at individual and systemic level. Here are some tools from our community that help guide how we redefine our relationship with nature.
+            Every day there are more and more phenomena around the world urging us to redefine our relationship with the planet&apos;s natural systems. These phenomena remind us that our community, its technology, the economy and nature are closely related planes, complex systems that are interconnected. We realise that sometimes (if not always) slow, intentional actions and loving gestures are more powerful than bold manifestos and urgent calls to action. Transformation cannot be rushed, because it requires connecting mind, heart, hands and soul at individual and systemic level. Here are some tools from our community that help guide how we redefine our relationship with nature.
           </p>
           <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black text-center leading-[1.216]" style={{ left: 304, top: 1512, width: 377 }}>
             Powered by{" "}<a href="https://www.are.na/" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">Are.na</a>
@@ -63,7 +65,7 @@ export default function ToolsPage() {
           </div>
 
           {/* FOR ECONOMY */}
-          <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 616, top: 1626, width: 436 }}>for Economy</p>
+          <p data-scroll-section="Economy" className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 616, top: 1626, width: 436 }}>for Economy</p>
           <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216]" style={{ left: 616, top: 1673, width: 436 }}>Tools for sharing different types of value</p>
           <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[100.5%]" style={{ left: 616, top: 1724, width: 664 }}>
             We imagine a future where extractive practices are replaced by regenerative ones, where benefits and ownership are fairly distributed and where nothing is marginal because everything is interconnected. We have seen that shifting power dynamics and acknowledging the value and roles of different actors strengthens their agency to collaboratively drive transformation and become stewards of their lives and ecosystems. Here are some tools from our community that can help share different types of value with reciprocity.
@@ -82,10 +84,10 @@ export default function ToolsPage() {
           </div>
 
           {/* FOR TECHNOLOGY */}
-          <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 160, top: 2360, width: 436 }}>for technology</p>
+          <p data-scroll-section="Technology" className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 160, top: 2360, width: 436 }}>for technology</p>
           <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216]" style={{ left: 160, top: 2407, width: 436 }}>Tech for the birth of the world</p>
           <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[100.5%]" style={{ left: 160, top: 2458, width: 668 }}>
-            We are at the brink between the end of this world and the birth of a new one. We don't need tech for the end of the world, we need tech for the birth of the new one. Here are some technologies for delivering and caring for this moment.
+            We are at the brink between the end of this world and the birth of a new one. We don&apos;t need tech for the end of the world, we need tech for the birth of the new one. Here are some technologies for delivering and caring for this moment.
           </p>
           <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black text-center leading-[1.216]" style={{ left: 305, top: 2716, width: 377 }}>
             Powered by{" "}<a href="https://www.are.na/" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">Are.na</a>
@@ -101,7 +103,7 @@ export default function ToolsPage() {
           </div>
 
           {/* FOR COMMUNITY */}
-          <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 616, top: 2839, width: 436 }}>for community</p>
+          <p data-scroll-section="Community" className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 616, top: 2839, width: 436 }}>for community</p>
           <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216]" style={{ left: 616, top: 2886, width: 436 }}>Tools for nurturing communities</p>
           <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[100.5%] tracking-[-0.58px]" style={{ left: 616, top: 2937, width: 664 }}>
             As Cambio Natural, we foster open dialogue, radical listening, and learning from the creative tensions that emerge through it. We invite everyone (starting with ourselves) to recognize their complicity in systemic problems while embracing their capacity for growth and change. Here are some tools from our collective experience that can help nourish your community.
@@ -120,7 +122,7 @@ export default function ToolsPage() {
           </div>
 
           {/* JOIN OUR METALABEL */}
-          <div className="absolute bg-white" style={{ left: 0, top: 3416, width: 1441, height: 497 }}>
+          <div data-scroll-section="Metalabel" className="absolute bg-white" style={{ left: 0, top: 3416, width: 1441, height: 497 }}>
             <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216] tracking-[0.36px]" style={{ left: 160, top: 156 }}>The Collective Project Space</p>
             <h2 className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216] tracking-[0.58px]" style={{ left: 160, top: 189, width: 436 }}>
               Join Our<br />Metalabel
@@ -150,7 +152,7 @@ export default function ToolsPage() {
       </main>
 
       {/* ── MOBILE ────────────────────────────────────────────── */}
-      <main className="md:hidden flex flex-col bg-[#f4e509]">
+      <main data-scroll-section="Introduction" className="md:hidden flex flex-col bg-[#f4e509]">
         {/* Hero */}
         <div className="px-4 pt-6 pb-6 text-center">
           <p className="font-[family-name:var(--font-body)] text-[20px] text-black leading-[1.3] mb-1">
@@ -162,14 +164,14 @@ export default function ToolsPage() {
         </div>
 
         {/* FOR NATURE */}
-        <div className="px-4 pb-8">
+        <div data-scroll-section="Nature" className="px-4 pb-8">
           <p className="font-[family-name:var(--font-heading)] uppercase text-[22px] text-black leading-[1.2] mb-1">for nature</p>
           <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.3] mb-3">Tools for nourishing our nature</p>
           <div className="overflow-hidden rounded-lg mb-4" style={{ height: 128 }}>
             <img src="/images/tools-nature-cn0202.png" alt="Tools for nature" className="w-full h-full object-cover" />
           </div>
           <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.4] mb-4">
-            Every day there are more and more phenomena around the world urging us to redefine our relationship with the planet's natural systems. These phenomena remind us that our community, its technology, the economy and nature are closely related planes, complex systems that are interconnected. We realise that sometimes (if not always) slow, intentional actions and loving gestures are more powerful than bold manifestos and urgent calls to action. Transformation cannot be rushed, because it requires connecting mind, heart, hands and soul at individual and systemic level. Here are some tools from our community that help guide how we redefine our relationship with nature.
+            Every day there are more and more phenomena around the world urging us to redefine our relationship with the planet&apos;s natural systems. These phenomena remind us that our community, its technology, the economy and nature are closely related planes, complex systems that are interconnected. We realise that sometimes (if not always) slow, intentional actions and loving gestures are more powerful than bold manifestos and urgent calls to action. Transformation cannot be rushed, because it requires connecting mind, heart, hands and soul at individual and systemic level. Here are some tools from our community that help guide how we redefine our relationship with nature.
           </p>
           <a href="https://www.are.na/share/EiiyelD" target="_blank" rel="noopener noreferrer"
             className="block bg-black rounded-[10px] font-[family-name:var(--font-heading)] uppercase text-[16px] text-white text-center py-3 mb-1">
@@ -181,7 +183,7 @@ export default function ToolsPage() {
         </div>
 
         {/* FOR ECONOMY */}
-        <div className="px-4 pb-8">
+        <div data-scroll-section="Economy" className="px-4 pb-8">
           <p className="font-[family-name:var(--font-heading)] uppercase text-[22px] text-black leading-[1.2] mb-1">for Economy</p>
           <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.3] mb-3">Tools for sharing different types of value</p>
           <div className="overflow-hidden rounded-lg mb-4" style={{ height: 128 }}>
@@ -200,14 +202,14 @@ export default function ToolsPage() {
         </div>
 
         {/* FOR TECHNOLOGY */}
-        <div className="px-4 pb-8">
+        <div data-scroll-section="Technology" className="px-4 pb-8">
           <p className="font-[family-name:var(--font-heading)] uppercase text-[22px] text-black leading-[1.2] mb-1">for technology</p>
           <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.3] mb-3">Tech for the birth of the world</p>
           <div className="overflow-hidden rounded-lg mb-4" style={{ height: 99 }}>
             <img src="/images/tools-tech-cn0204.png" alt="" aria-hidden className="w-full h-full object-cover" />
           </div>
           <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.4] mb-4">
-            We are at the brink between the end of this world and the birth of a new one. We don't need tech for the end of the world, we need tech for the birth of the new one. Here are some technologies for delivering and caring for this moment.
+            We are at the brink between the end of this world and the birth of a new one. We don&apos;t need tech for the end of the world, we need tech for the birth of the new one. Here are some technologies for delivering and caring for this moment.
           </p>
           <a href="https://www.are.na/share/FUhqTfR" target="_blank" rel="noopener noreferrer"
             className="block bg-black rounded-[10px] font-[family-name:var(--font-heading)] uppercase text-[16px] text-white text-center py-3 mb-1">
@@ -219,7 +221,7 @@ export default function ToolsPage() {
         </div>
 
         {/* FOR COMMUNITY */}
-        <div className="px-4 pb-8">
+        <div data-scroll-section="Community" className="px-4 pb-8">
           <p className="font-[family-name:var(--font-heading)] uppercase text-[22px] text-black leading-[1.2] mb-1">for community</p>
           <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.3] mb-3">Tools for nurturing communities</p>
           <div className="overflow-hidden rounded-lg mb-4" style={{ height: 152 }}>
@@ -238,7 +240,7 @@ export default function ToolsPage() {
         </div>
 
         {/* Metalabel CTA */}
-        <div className="bg-white px-4 py-8">
+        <div data-scroll-section="Metalabel" className="bg-white px-4 py-8">
           <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.3] mb-1">The Collective Project Space</p>
           <h2 className="font-[family-name:var(--font-heading)] uppercase text-[24px] text-black leading-[1.2] mb-3">
             Join Our<br />Metalabel

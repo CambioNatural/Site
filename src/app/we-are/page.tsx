@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import DesktopScale from "@/components/DesktopScale";
+import SectionDots from "@/components/SectionDots";
 import SubstackEmbed from "@/components/SubstackEmbed";
 
 export const metadata: Metadata = {
@@ -77,11 +78,12 @@ const mobilePartnerLogos = [
 
 export default function WeArePage() {
   return (
-    <div className="bg-[#fd1371] flex flex-col overflow-x-hidden">
+    <div className="scroll-navigation-page bg-[#fd1371] flex flex-col overflow-x-hidden">
       <Navbar bg="bg-[#fd1371]" textColor="text-white" ctaBg="bg-white" ctaText="text-[#f90068]" />
+      <SectionDots />
 
       {/* ── DESKTOP ────────────────────────────────────────────── */}
-      <main className="hidden md:block">
+      <main data-scroll-section="Introduction" className="hidden md:block">
         <DesktopScale height={7575}>
         <div className="relative" style={{ width: 1440, height: 7575 }}>
 
@@ -116,7 +118,7 @@ export default function WeArePage() {
           </p>
 
           {/* Cesar */}
-          <div className="absolute overflow-hidden rounded-lg" style={{ left: 887, top: 1675, width: 350, height: 350 }}>
+          <div data-scroll-section="Cesar" className="absolute overflow-hidden rounded-lg" style={{ left: 887, top: 1675, width: 350, height: 350 }}>
             <img src="/images/team-cesar.png" alt="Cesar Jerónimo" className="w-full h-full object-cover" />
           </div>
           <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 160, top: 1750, width: 664 }}>
@@ -125,7 +127,7 @@ export default function WeArePage() {
           </div>
 
           {/* Blaga */}
-          <div className="absolute overflow-hidden rounded-lg" style={{ left: 191, top: 2233, width: 372, height: 372 }}>
+          <div data-scroll-section="Blaga" className="absolute overflow-hidden rounded-lg" style={{ left: 191, top: 2233, width: 372, height: 372 }}>
             <img src="/images/team-blaga.png" alt="Blaga" className="w-full h-full object-cover" />
           </div>
           <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 616, top: 2260, width: 664 }}>
@@ -134,7 +136,7 @@ export default function WeArePage() {
           </div>
 
           {/* Marcelo */}
-          <div className="absolute overflow-hidden rounded-lg" style={{ left: 887, top: 2893, width: 350, height: 350 }}>
+          <div data-scroll-section="Marcelo" className="absolute overflow-hidden rounded-lg" style={{ left: 887, top: 2893, width: 350, height: 350 }}>
             <img src="/images/team-marcelo.png" alt="Marcelo" className="w-full h-full object-cover" />
           </div>
           <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 160, top: 2931, width: 664 }}>
@@ -143,7 +145,7 @@ export default function WeArePage() {
           </div>
 
           {/* Collaboration ecosystem */}
-          <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-black" style={{ left: 159, top: 3536, width: 399 }}>
+          <div data-scroll-section="Collaboration ecosystem" className="absolute font-[family-name:var(--font-body)] text-[29px] text-black" style={{ left: 159, top: 3536, width: 399 }}>
             <p className="font-[family-name:var(--font-heading)] leading-[1.216]">Our collaboration ecosystem</p>
             <p className="leading-[1.216]">with whom we have taken and shared nourishment:</p>
           </div>
@@ -160,7 +162,7 @@ export default function WeArePage() {
           <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[16px] text-black text-center leading-[1.216]" style={{ left: 615, top: 4396, width: 209 }}>Pancho maiz</p>
 
           {/* Metalabel CTA */}
-          <div className="absolute bg-[#c4e3ff]" style={{ left: 0, top: 5032, width: 1441, height: 497 }}>
+          <div data-scroll-section="Metalabel" className="absolute bg-[#c4e3ff]" style={{ left: 0, top: 5032, width: 1441, height: 497 }}>
             <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216] tracking-[0.36px]" style={{ left: 160, top: 155 }}>Work in progress</p>
             <h2 className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216] tracking-[0.58px]" style={{ left: 160, top: 188, width: 436 }}>Visit our metalabel</h2>
             <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216] tracking-[0.36px]" style={{ left: 160, top: 275, width: 364 }}>
@@ -176,7 +178,7 @@ export default function WeArePage() {
           </div>
 
           {/* Core elements */}
-          <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 160, top: 5624, width: 475 }}>
+          <p data-scroll-section="Core elements" className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 160, top: 5624, width: 475 }}>
             Our&nbsp; core elements
           </p>
 
@@ -227,7 +229,7 @@ export default function WeArePage() {
       </main>
 
       {/* ── MOBILE ────────────────────────────────────────────── */}
-      <main className="md:hidden flex flex-col bg-[#fd1371]">
+      <main data-scroll-section="Introduction" className="md:hidden flex flex-col bg-[#fd1371]">
         {/* Hero */}
         <div className="relative px-4 pt-6 pb-6 overflow-hidden">
           <div className="absolute overflow-hidden pointer-events-none" style={{ left: -60, top: 40, width: 160, height: 160 }}>
@@ -257,7 +259,7 @@ export default function WeArePage() {
           </p>
 
           {/* Cesar */}
-          <div className="flex gap-4 mb-6">
+          <div data-scroll-section="Cesar" className="flex gap-4 mb-6">
             <div className="flex-1">
               <p className="font-[family-name:var(--font-heading)] text-[18px] text-white leading-[1.2] mb-1">Cesar Jerónimo</p>
               <p className="font-[family-name:var(--font-body)] text-[14px] text-white leading-[1.4]">
@@ -270,7 +272,7 @@ export default function WeArePage() {
           </div>
 
           {/* Blaga */}
-          <div className="flex gap-4 mb-6">
+          <div data-scroll-section="Blaga" className="flex gap-4 mb-6">
             <div className="overflow-hidden rounded-lg shrink-0" style={{ width: 135, height: 126 }}>
               <img src="/images/team-blaga.png" alt="Blaga" className="w-full h-full object-cover" />
             </div>
@@ -283,7 +285,7 @@ export default function WeArePage() {
           </div>
 
           {/* Marcelo */}
-          <div className="flex gap-4 mb-6">
+          <div data-scroll-section="Marcelo" className="flex gap-4 mb-6">
             <div className="flex-1">
               <p className="font-[family-name:var(--font-heading)] text-[18px] text-white leading-[1.2] mb-1">Marcelo</p>
               <p className="font-[family-name:var(--font-body)] text-[14px] text-white leading-[1.4]">
@@ -297,7 +299,7 @@ export default function WeArePage() {
         </div>
 
         {/* Collaboration ecosystem — white section */}
-        <div className="bg-white px-4 py-8">
+        <div data-scroll-section="Collaboration ecosystem" className="bg-white px-4 py-8">
           <p className="font-[family-name:var(--font-heading)] text-[20px] text-black leading-[1.2] mb-1">Our collaboration ecosystem</p>
           <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.3] mb-4">with whom we have taken and shared nourishment:</p>
           <p className="font-[family-name:var(--font-body)] text-[13px] text-black leading-[1.5] mb-6">
@@ -314,7 +316,7 @@ export default function WeArePage() {
           </div>
 
           {/* Metalabel CTA */}
-          <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.3] mb-1">A community showcase portfolio</p>
+          <p data-scroll-section="Metalabel" className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.3] mb-1">A community showcase portfolio</p>
           <h2 className="font-[family-name:var(--font-heading)] uppercase text-[24px] text-black leading-[1.2] mb-3">
             join to our metalabel
           </h2>
@@ -331,7 +333,7 @@ export default function WeArePage() {
         </div>
 
         {/* Core elements — white section continues */}
-        <div className="bg-white px-4 pb-8">
+        <div data-scroll-section="Core elements" className="bg-white px-4 pb-8">
           <p className="font-[family-name:var(--font-heading)] uppercase text-[24px] text-black leading-[1.2] mb-6">
             Our core elements
           </p>
@@ -382,7 +384,7 @@ export default function WeArePage() {
         </div>
 
         {/* Newsletter */}
-        <div className="bg-white px-4 py-8 border-t border-black/10">
+        <div data-scroll-section="Newsletter" className="bg-white px-4 py-8 border-t border-black/10">
           <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.3] mb-1">Join to our waiting list for our Newsletter</p>
           <h2 className="font-[family-name:var(--font-heading)] uppercase text-[24px] text-black leading-[1.2] mb-3">
             Lets Co-create<br />together

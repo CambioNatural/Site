@@ -1,0 +1,9 @@
+/* Demo adapters accept the distinct editor payloads without changing production types. */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+const load=(key:string,fallback:any)=>{try{return JSON.parse(localStorage.getItem(key)??'null')??fallback;}catch{return fallback;}};
+export async function writeEntry(action:string,kind:string,id:string|null,version:number,content:any){const key=`cn-demo-${kind}`,entries=load(key,[]);let entry=entries.find((e:any)=>e.id===id);if(entry&&entry.version!==version)return {ok:false,error:'Recarga la demo para recuperar la versión guardada.'};if(action==='save'){entry={id:id??crypto.randomUUID(),kind,content,slug:content.slug,version:version+1,publishedVersion:entry?.publishedVersion??null,publishedContent:entry?.publishedContent??null,updated_at:new Date().toISOString()};}else{entry={...entry,publishedVersion:action==='publish'?version:null,publishedContent:action==='publish'?entry.content:null};}localStorage.setItem(key,JSON.stringify([entry,...entries.filter((e:any)=>e.id!==entry.id)]));return {ok:true,id:entry.id,version:entry.version};}
+export async function uploadImage(form:FormData){const file=form.get('image') as File;const src=await new Promise<string>((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result));r.onerror=reject;r.readAsDataURL(file);});return {ok:true,src};}
+export async function saveDraft(document:any,version:number){localStorage.setItem('cn-demo-home',JSON.stringify({document,version:version+1}));return {ok:true,version:version+1};}
+export async function publishDraft(version:number){localStorage.setItem('cn-demo-home-published',String(version));localStorage.setItem('cn-demo-home-live',localStorage.getItem('cn-demo-home')??'null');return {ok:true,version};}
+export async function restoreRevision(){return {ok:false,error:'Esta demo no conserva revisiones históricas de la portada.'};}
+export async function logout(){location.hash='home';}

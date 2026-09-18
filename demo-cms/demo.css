@@ -1,0 +1,4 @@
+:root { --font-heading:'Dela Gothic One',sans-serif; --font-body:'Inter',sans-serif; }
+* { box-sizing:border-box; } body { margin:0; } button,input,textarea,select { font:inherit; } button { cursor:pointer; } fieldset { border:0; padding:0; margin:0; } ul { padding:0; } h1,h2,h3,p { margin:0; } a { color:inherit; }
+
+.demo-switch { padding:20px; background:#f7f7f2; text-align:center; font:13px/1.5 Inter,sans-serif; color:#20211c; } .demo-switch a { display:inline-block; padding:10px 16px; text-decoration:underline; text-underline-offset:3px; }

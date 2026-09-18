@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Dela_Gothic_One, Inter } from "next/font/google";
 import "./globals.css";
+import PopupDisplay from "@/components/popups/PopupDisplay";
 
 const delaGothic = Dela_Gothic_One({
   weight: "400",
@@ -45,7 +46,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${delaGothic.variable} ${inter.variable}`}>
-      <body>{children}</body>
+      <body>{children}<PopupDisplay /></body>
     </html>
   );
 }

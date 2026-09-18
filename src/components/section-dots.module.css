@@ -1,0 +1,12 @@
+.nav { position:fixed; top:50%; right:max(8px,env(safe-area-inset-right)); transform:translateY(-50%); z-index:45; background:#fff; border:1px solid #d5d5ce; border-radius:24px; padding:6px 0; font-family:var(--font-body),Arial,sans-serif; }
+.nav ol { list-style:none; padding:0; margin:0; }
+.nav button { position:relative; display:grid; place-items:center; width:44px; height:44px; padding:0; background:transparent; border:0; border-radius:50%; cursor:pointer; }
+.dot { display:block; width:8px; height:8px; border:1px solid #68685e; border-radius:50%; background:#fff; transition:transform 160ms ease,background-color 160ms ease; }
+.nav button[aria-current] .dot { background:#b8004c; border-color:#b8004c; transform:scale(1.5); }
+.nav button:hover .dot { background:#20211c; border-color:#20211c; }
+.nav button:focus-visible { outline:3px solid #b8004c; outline-offset:2px; }
+.label { position:absolute; right:calc(100% + 10px); width:max-content; max-width:min(220px,65vw); padding:7px 12px; border-radius:5px; background:#20211c; color:white; font-size:13px; font-weight:500; line-height:1.4; text-align:right; opacity:0; visibility:hidden; pointer-events:none; transition:opacity 120ms ease; }
+.nav button:hover .label,.nav button:focus-visible .label { opacity:1; visibility:visible; }
+@media(max-width:767px) { .nav { right:2px; } }
+@media(prefers-reduced-motion:reduce) { .dot,.label { transition:none; } }
+@media(max-height:420px) { .nav { max-height:90dvh; overflow-y:auto; } }

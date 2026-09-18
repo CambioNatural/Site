@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import DesktopScale from "@/components/DesktopScale";
+import SectionDots from "@/components/SectionDots";
 import SubstackEmbed from "@/components/SubstackEmbed";
 
 export const metadata: Metadata = {
@@ -23,11 +24,12 @@ export const metadata: Metadata = {
 
 export default function GatheringsPage() {
   return (
-    <div className="bg-[#0070f9] flex flex-col overflow-x-hidden">
+    <div className="scroll-navigation-page bg-[#0070f9] flex flex-col overflow-x-hidden">
       <Navbar bg="bg-[#0070f9]" textColor="text-white" ctaBg="bg-white" ctaText="text-[#0070f9]" />
+      <SectionDots />
 
       {/* ── DESKTOP ────────────────────────────────────────────── */}
-      <main className="hidden md:block">
+      <main data-scroll-section="Introduction" className="hidden md:block">
         <DesktopScale height={3838}>
         <div className="relative" style={{ width: 1440, height: 3838 }}>
 
@@ -51,7 +53,7 @@ export default function GatheringsPage() {
           </p>
 
           {/* Online dialogue */}
-          <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 160, top: 1086, width: 436 }}>
+          <div data-scroll-section="Online dialogues" className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 160, top: 1086, width: 436 }}>
             <p className="font-[family-name:var(--font-heading)] leading-[1.216]">Online dialogue spaces</p>
             <p>: Social Innovation for Planetary Health</p>
             <p className="italic">From science to praxis</p>
@@ -65,7 +67,7 @@ export default function GatheringsPage() {
           </div>
 
           {/* Community care */}
-          <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 160, top: 1850, width: 436 }}>
+          <div data-scroll-section="Community care" className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 160, top: 1850, width: 436 }}>
             <p className="font-[family-name:var(--font-heading)] leading-[1.216]">Community care gatherings</p>
             <p className="mt-4">
               Hosted by Radici a Moncalieri we organized a three day gathering to eat, drink, laugh, cry, sing, sleep and take home (and share with others) lessons about resilience and strength from nature, other communities, and cultures that are successfully facing challenges today.
@@ -79,7 +81,7 @@ export default function GatheringsPage() {
           </div>
 
           {/* Transformative learning */}
-          <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 160, top: 2496, width: 436 }}>
+          <div data-scroll-section="Transformative learning" className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 160, top: 2496, width: 436 }}>
             <p className="font-[family-name:var(--font-heading)] leading-[1.216]">Transformative learning experiences</p>
             <p className="mt-4">
               We co-organized the Global Doughnut Days Mexico 2025, a three day gathering focused on approaching alternative economic frameworks and practices - using the Doughnut Economics framework as guide, together with Coalición Tricolor, a member of the Doughnut Economics Action Lab community. The event included and serviced academics, government officials, business leaders and financiers.
@@ -98,7 +100,7 @@ export default function GatheringsPage() {
           </div>
 
           {/* Newsletter */}
-          <div className="absolute bg-white" style={{ left: 0, top: 3236, width: 1441, height: 497 }}>
+          <div data-scroll-section="Newsletter" className="absolute bg-white" style={{ left: 0, top: 3236, width: 1441, height: 497 }}>
             <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216] tracking-[0.36px]" style={{ left: 160, top: 155 }}>Join to Newsletter</p>
             <h2 className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216] tracking-[0.58px]" style={{ left: 160, top: 188, width: 436 }}>
               Lets Co-create<br />together
@@ -125,7 +127,7 @@ export default function GatheringsPage() {
       </main>
 
       {/* ── MOBILE ────────────────────────────────────────────── */}
-      <main className="md:hidden flex flex-col bg-[#0070f9]">
+      <main data-scroll-section="Introduction" className="md:hidden flex flex-col bg-[#0070f9]">
         {/* Hero */}
         <div className="flex gap-3 px-4 pt-6 pb-6 items-start">
           {/* Rotated hero image */}
@@ -148,7 +150,7 @@ export default function GatheringsPage() {
         </div>
 
         {/* Online dialogue */}
-        <div className="px-4 pb-6">
+        <div data-scroll-section="Online dialogues" className="px-4 pb-6">
           <div className="mb-3">
             <p className="font-[family-name:var(--font-heading)] text-[20px] text-white leading-[1.2]">Online dialogue spaces</p>
             <p className="font-[family-name:var(--font-body)] text-[16px] text-white leading-[1.3]">: Social Innovation for Planetary Health</p>
@@ -165,7 +167,7 @@ export default function GatheringsPage() {
         </div>
 
         {/* Community care */}
-        <div className="px-4 pb-6">
+        <div data-scroll-section="Community care" className="px-4 pb-6">
           <p className="font-[family-name:var(--font-heading)] text-[20px] text-white leading-[1.2] mb-2">Community care gatherings</p>
           <p className="font-[family-name:var(--font-body)] text-[14px] text-white leading-[1.4] mb-4">
             Hosted by Radici a Moncalieri we organized a three day gathering to eat, drink, laugh, cry, sing, sleep and take home (and share with others) lessons about resilience and strength from nature, other communities, and cultures that are successfully facing challenges today.
@@ -181,7 +183,7 @@ export default function GatheringsPage() {
         </div>
 
         {/* Transformative learning */}
-        <div className="px-4 pb-6">
+        <div data-scroll-section="Transformative learning" className="px-4 pb-6">
           <p className="font-[family-name:var(--font-heading)] text-[20px] text-white leading-[1.2] mb-2">Transformative learning experiences</p>
           <p className="font-[family-name:var(--font-body)] text-[14px] text-white leading-[1.4] mb-4">
             We co-organized the Global Doughnut Days Mexico 2025, a three day gathering focused on approaching alternative economic frameworks and practices - using the Doughnut Economics framework as guide, together with Coalición Tricolor, a member of the Doughnut Economics Action Lab community. The event included and serviced academics, government officials, business leaders and financiers.
@@ -201,7 +203,7 @@ export default function GatheringsPage() {
         </div>
 
         {/* Newsletter */}
-        <div className="bg-white px-4 py-8">
+        <div data-scroll-section="Newsletter" className="bg-white px-4 py-8">
           <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.3] mb-1">Join to our waiting list for our Newsletter</p>
           <h2 className="font-[family-name:var(--font-heading)] uppercase text-[24px] text-black leading-[1.2] mb-3">
             Lets Co-create<br />together

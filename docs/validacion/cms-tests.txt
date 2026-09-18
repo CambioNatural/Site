@@ -1,0 +1,17 @@
+
+> website@0.1.0 test:cms
+> node --import tsx --test tests/cms-schema.test.ts
+
+✔ contenido inicial conserva las variantes originales (24.826041ms)
+✔ enlaces rechazan ejecución de código, credenciales y rutas nuevas (1.137916ms)
+✔ medios limitados a imágenes propias y borradores conocidos (1.327458ms)
+✔ rechaza cambios estructurales y texto fuera del límite (3.047625ms)
+✔ reemplazo de imagen, título y enlace válido se conserva (0.368417ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 803.957792
