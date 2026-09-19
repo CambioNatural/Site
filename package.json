@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:cms": "node --import tsx --test tests/cms-schema.test.ts tests/entries-schema.test.ts tests/crm-schema.test.ts tests/admin-translations.test.ts"
+    "test:cms": "node --import tsx --test tests/cms-schema.test.ts tests/entries-schema.test.ts tests/crm-schema.test.ts tests/admin-translations.test.ts tests/blog.test.tsx"
   },
   "dependencies": {
     "@supabase/ssr": "0.12.7",

@@ -61,3 +61,14 @@ migración de base de datos: el documento usa el JSON existente de la entrada.
 El servidor valida los tipos de nodos, enlaces, profundidad, tamaño y coincidencia
 entre texto plano y documento. Se conservan el guardado de borradores, publicación,
 control de versiones y permisos existentes.
+
+## Páginas públicas del blog
+
+- `/blog`: la publicación más reciente encabeza la primera página; el archivo se pagina cada 9 entradas.
+- `/blog/[slug]`: portada, autor, fecha de publicación, tiempo estimado de lectura, cuerpo enriquecido y otras publicaciones recientes.
+- El enlace Blog se incorpora a la navegación pública y las entradas publicadas aparecen en el sitemap con sus metadatos para buscadores y redes.
+- Las rutas públicas leen únicamente `cms_entry_publications` con el cliente público de Supabase y sin caché persistente. Los borradores se mantienen privados; una entrada retirada devuelve 404 en su antigua dirección.
+- El CMS incorpora **Ver diseño del blog**, una muestra privada identificada con contenido de ejemplo, y **Ver borrador en el sitio**, disponible después de guardar. Esta última muestra el borrador guardado con las imágenes privadas usando el endpoint autenticado existente.
+- Los ejemplos se generan en memoria y no se guardan en Supabase ni se mezclan con el archivo público. No se crearon artículos de producción como parte de esta implementación.
+
+Las páginas heredan Dela Gothic One, Inter, el amarillo y los acentos rosas de Cambio Natural. La columna del artículo tiene un ancho máximo de 720 px, las imágenes se conservan completas en el artículo y la composición se apila en móvil. Los textos de navegación pública siguen el inglés del sitio.

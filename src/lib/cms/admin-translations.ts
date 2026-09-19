@@ -336,6 +336,10 @@ Cargando editor…|Loading editor…
 Atajos: ⌘/Ctrl + B para negrita, I para cursiva y Z para deshacer.|Shortcuts: ⌘/Ctrl + B for bold, I for italic and Z to undo.
 El contenido supera el límite de 60,000 caracteres. Reduce el texto antes de guardar.|Content exceeds 60,000 characters. Shorten the text before saving.
 Cambios pendientes|Pending changes
+Ver diseño del blog|Preview blog design
+Ver borrador en el sitio|Preview saved post
+Entrada publicada en el blog.|Post published on the blog.
+Prepara y publica entradas en el blog del sitio.|Prepare and publish posts on the website blog.
 caracteres|characters
 Los registros archivados se consultan en modo de lectura.|Archived records are read-only.
 Lista|List

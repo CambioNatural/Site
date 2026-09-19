@@ -16,6 +16,7 @@ export interface NavbarProps {
 
 export default function NavbarClient({ navigation = navigationContent, bg = "bg-white", textColor = "text-black", ctaBg = "bg-[#f90068]", ctaText = "text-white" }: NavbarProps) {
   const pathname = usePathname();
+  const links = navigation.links.some(link=>link.href==='/blog') ? navigation.links : [...navigation.links,{label:'Blog',href:'/blog'}];
   const [openPath, setOpenPath] = useState<string | null>(null);
   const menuOpen = openPath === pathname;
   const toggle = useRef<HTMLButtonElement>(null);
@@ -39,8 +40,8 @@ export default function NavbarClient({ navigation = navigationContent, bg = "bg-
           </svg>
         </button>
         <div id="navigation-links" className={`${styles.links} ${menuOpen ? styles.open : ""}`}>
-          {navigation.links.map((link) => (
-            <Link key={link.href} href={link.href} aria-current={pathname === link.href ? "page" : undefined}
+          {links.map((link) => (
+            <Link key={link.href} href={link.href} aria-current={(pathname === link.href || link.href === "/blog" && pathname.startsWith("/blog/")) ? "page" : undefined}
               className={styles.link} onClick={() => setOpenPath(null)}>{link.label}</Link>
           ))}
           <a href={navigation.booking.href} target="_blank" rel="noopener noreferrer" className={`${styles.booking} ${ctaBg} ${ctaText}`}>

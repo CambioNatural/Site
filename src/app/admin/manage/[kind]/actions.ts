@@ -28,6 +28,7 @@ export async function writeEntry(action: 'save' | 'publish' | 'unpublish', kindV
         if (error)
             throw new Error(error.code === '23505' ? 'Ese identificador ya está en uso. Elige otro.' : error.message.includes('CONFLICT') ? 'Otra sesión cambió este contenido. Copia tus cambios y recarga.' : 'No se pudo guardar. Vuelve a intentarlo.');
         revalidatePath(`/admin/manage/${kind}`);
+        if(kind==='blog'){revalidatePath('/blog');revalidatePath('/blog/[slug]','page');revalidatePath('/sitemap.xml');}
         return { ok: true as const, id: String(data), version: action === 'save' ? version + 1 : version };
     }
     catch (error) {

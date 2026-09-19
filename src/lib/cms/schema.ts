@@ -4,7 +4,7 @@ import { navigationContent } from '@/content/navigation';
 
 const text = z.string().trim().min(1, 'Este campo es obligatorio.').max(6000, 'Usa hasta 6000 caracteres.');
 const title = z.string().trim().min(1).max(250);
-const route = /^\/(?:tools|gatherings|media-club|we-are)?$/;
+const route = /^\/(?:tools|gatherings|media-club|we-are|blog(?:\/[a-z0-9]+(?:-[a-z0-9]+)*)?)?$/;
 export const linkSchema = z.string().max(2048).refine(value => {
   if (route.test(value)) return true;
   try { const u = new URL(value); return u.protocol === 'https:' && !u.username && !u.password; } catch { return false; }
