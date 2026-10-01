@@ -5,6 +5,7 @@ import { createClient } from '@/lib/supabase/server';
 import { requireCmsAccess } from '@/lib/cms/data';
 import { parseDocument, type CmsDocument } from '@/lib/cms/schema';
 import sharp from 'sharp';
+import {documentImages} from '@/lib/cms/images';
 
 export type Result = { ok: boolean; error?: string; version?: number; src?: string; document?: CmsDocument };
 const message = (error: unknown) => error instanceof Error ? error.message : 'No se pudo completar la operación.';
@@ -55,7 +56,7 @@ export async function publishDraft(expectedVersion: number): Promise<Result> {
     const {data:row,error:readError} = await supabase.from('cms_drafts').select('content,version').eq('id','home').single();
     if (readError || row.version !== expectedVersion) throw new Error('El borrador cambió. Recarga antes de publicar.');
     const content = parseDocument(row.content);
-    const images = [content.home.hero.wordmark,content.home.about.image,...content.home.initiatives.map(i=>i.image),content.home.article.image,content.home.newsletter.image];
+    const images = documentImages(content);
     for (const image of images) {
       if (!image.src.startsWith('draft:')) continue;
       const sourcePath = image.src.slice(6);

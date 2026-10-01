@@ -1,6 +1,29 @@
 export type AdminLanguage='es'|'en';
 export const english:Record<string,string>={};
 const entries=`
+Páginas|Pages
+No se encontraron coincidencias. Prueba otro texto.|No matches found. Try another text.
+Páginas del sitio|Site pages
+Elige una página, modifica su contenido y revisa el borrador antes de publicar.|Choose a page, edit its content and preview the draft before publishing.
+Página|Page
+Ajustes generales|General settings
+Buscar contenido|Search content
+Buscar texto, imagen o enlace|Find text, image or link
+Se conserva el diseño de cada página. Los textos repetidos se actualizan juntos en escritorio y celular. Revisa la vista previa si cambias la longitud del texto.|Each page keeps its layout. Repeated copy updates together on desktop and mobile. Preview changes to text length before publishing.
+Textos|Text
+Imágenes|Images
+Enlaces|Links
+Textos del blog|Blog copy
+Título para buscadores|Search engine title
+Descripción para buscadores|Search engine description
+Elementos centrales|Core elements
+Imágenes decorativas|Decorative images
+Título de sección|Section title
+Marca · primera línea|Brand · first line
+Marca · segunda línea|Brand · second line
+Blog · texto del menú|Blog · menu label
+Newsletter · URL de Substack|Newsletter · Substack URL
+
 Administración|Administration
 Usuarios|Users
 Portada|Homepage
@@ -72,12 +95,12 @@ Nueva empresa|New company
 Nuevo contacto|New contact
 Nueva oportunidad|New opportunity
 Nueva actividad|New activity
-Resumen CRM|CRM summary
+Resumen Admin Tool|Admin Tool summary
 contactos activos|active contacts
 oportunidades abiertas|open opportunities
 seguimientos vencidos|overdue follow-ups
 Valor abierto|Open value
-Entidades CRM|CRM entities
+Entidades Admin Tool|Admin Tool entities
 Buscar|Search
 Nombre, correo, responsable…|Name, email, owner…
 Vista|View
@@ -108,13 +131,13 @@ Guardando…|Saving…
 Guardar registro|Save record
 Cerrar editor|Close editor
 Registro guardado.|Record saved.
-Los registros archivados conservan sus relaciones. Las actividades de correo registran el seguimiento; el envío se realiza fuera del CRM.|Archived records retain their relationships. Email activities track follow-ups; emails are sent outside the CRM.
+Los registros archivados conservan sus relaciones. Las actividades de correo registran el seguimiento; el envío se realiza fuera del Admin Tool.|Archived records retain their relationships. Email activities track follow-ups; emails are sent outside the Admin Tool.
 Gestiona tus relaciones|Manage your relationships
 Selecciona un registro para editar o crea uno nuevo. Empieza por una empresa y sus contactos; después vincula oportunidades y actividades.|Select a record to edit or create a new one. Start with a company and its contacts, then link opportunities and activities.
 No se pudo confirmar el guardado. Tus cambios siguen aquí; recarga en otra pestaña para comprobar el registro antes de reintentar.|The save could not be confirmed. Your changes are still here; check the record in another tab before retrying.
 No se pudo guardar. Verifica tu acceso y los registros relacionados.|Could not save. Check your access and the linked records.
 El registro cambió en otra sesión. Recarga antes de editar.|This record changed in another session. Reload before editing.
-No fue posible guardar. Verifica tu sesión y el permiso CRM.|Could not save. Check your session and CRM permission.
+No fue posible guardar. Verifica tu sesión y el permiso Admin Tool.|Could not save. Check your session and Admin Tool permission.
 Revisa los campos del formulario antes de guardar.|Check the form fields before saving.
 Usuarios y permisos|Users and permissions
 Decide quién puede editar y publicar en cada módulo.|Choose who can manage each module.
@@ -300,8 +323,8 @@ Reintentar|Try again
 Ir al acceso|Go to sign in
 Acceso pendiente|Access pending
 Solicita a un administrador permisos para un módulo del CMS.|Ask an administrator for permission to access a CMS module.
-CRM pendiente de conexión|CRM connection pending
-No fue posible cargar los registros. Verifica la migración CRM y tu conexión.|Could not load records. Check the CRM migration and your connection.
+Admin Tool pendiente de conexión|Admin Tool connection pending
+No fue posible cargar los registros. Verifica la migración Admin Tool y tu conexión.|Could not load records. Check the Admin Tool migration and your connection.
 Volver al CMS|Back to CMS
 Volver al editor|Back to editor
 La pantalla está preparada. Falta aplicar la configuración de permisos en Supabase.|This screen is ready. Apply the permission configuration in Supabase to continue.

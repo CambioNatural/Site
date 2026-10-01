@@ -1,4 +1,5 @@
 export const navigationContent = {
+  brand:['cambio','natural'] as const,blogLabel:'Blog',
   links: [
     { label: "Tools", href: "/tools" },
     { label: "Gatherings", href: "/gatherings" },

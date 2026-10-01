@@ -1,0 +1,371 @@
+{
+  "tools": {
+    "seo": {
+      "title": "Tools",
+      "description": "Tools and spaces for dialogue and collaboration supporting bridge builders and caregivers — curated resources for nature, economy and technology, guiding how we redefine our relationship with the planet&apos;s natural systems."
+    },
+    "texts": {
+      "t1": "We offer tools and spaces for dialogue and collaboration,",
+      "t2": "supporting bridge builders and caregivers",
+      "t3": "for nature",
+      "t4": "Tools for nourishing our nature",
+      "t5": "Every day there are more and more phenomena around the world urging us to redefine our relationship with the planet's natural systems. These phenomena remind us that our community, its technology, the economy and nature are closely related planes, complex systems that are interconnected. We realise that sometimes (if not always) slow, intentional actions and loving gestures are more powerful than bold manifestos and urgent calls to action. Transformation cannot be rushed, because it requires connecting mind, heart, hands and soul at individual and systemic level. Here are some tools from our community that help guide how we redefine our relationship with nature.",
+      "t6": "Powered by",
+      "t7": "Are.na",
+      "t8": "Discover more here",
+      "t9": "for Economy",
+      "t10": "Tools for sharing different types of value",
+      "t11": "We imagine a future where extractive practices are replaced by regenerative ones, where benefits and ownership are fairly distributed and where nothing is marginal because everything is interconnected. We have seen that shifting power dynamics and acknowledging the value and roles of different actors strengthens their agency to collaboratively drive transformation and become stewards of their lives and ecosystems. Here are some tools from our community that can help share different types of value with reciprocity.",
+      "t12": "for technology",
+      "t13": "Tech for the birth of the world",
+      "t14": "We are at the brink between the end of this world and the birth of a new one. We don't need tech for the end of the world, we need tech for the birth of the new one. Here are some technologies for delivering and caring for this moment.",
+      "t15": "for community",
+      "t16": "Tools for nurturing communities",
+      "t17": "As Cambio Natural, we foster open dialogue, radical listening, and learning from the creative tensions that emerge through it. We invite everyone (starting with ourselves) to recognize their complicity in systemic problems while embracing their capacity for growth and change. Here are some tools from our collective experience that can help nourish your community.",
+      "t18": "The Collective Project Space",
+      "t19": "Join Our",
+      "t20": "Metalabel",
+      "t21": "Do you want to discover what more our community has created?",
+      "t22": "From local roots to global impact.",
+      "t23": "Explore Our Projects",
+      "t24": "Cambio natural CC BY-NC-ND 4.0",
+      "t25": "Powered by ",
+      "t26": "Do you want to discover what more our community has created? From local roots to global impact."
+    },
+    "images": {
+      "i1": {
+        "src": "/images/tools-hero.png",
+        "alt": ""
+      },
+      "i2": {
+        "src": "/images/tools-nature-cn0202.png",
+        "alt": "Tools for nature"
+      },
+      "i3": {
+        "src": "/images/tools-economy-cn0203.png",
+        "alt": "Tools for economy"
+      },
+      "i4": {
+        "src": "/images/tools-tech-cn0204.png",
+        "alt": ""
+      },
+      "i5": {
+        "src": "/images/tools-community-dithered.png",
+        "alt": "Tools for community"
+      },
+      "i6": {
+        "src": "/images/metalabel-image.png",
+        "alt": "Metalabel community projects"
+      }
+    },
+    "links": {
+      "l1": "https://www.are.na/",
+      "l2": "https://www.are.na/share/EiiyelD",
+      "l3": "https://www.are.na/share/fpoVIZF",
+      "l4": "https://www.are.na/share/FUhqTfR",
+      "l5": "https://www.are.na/share/WdoApNN",
+      "l6": "https://cambionatural.metalabel.com/"
+    }
+  },
+  "gatherings": {
+    "seo": {
+      "title": "Gatherings",
+      "description": "Cambio Natural convenes spaces for dialogue where diverse practitioners navigate tensions, build trust and nurture bold ideas — from online dialogues on Planetary Health to community care retreats and the Global Doughnut Days México."
+    },
+    "texts": {
+      "t1": "In a world affected by ",
+      "t2": "polycrises",
+      "t3": " we see strategic polarisation and disconnection not only as a missed opportunity but as a threat to our common future.",
+      "t4": "Our work is nourished by our nomadic experience, deep research and encounters across the globe.",
+      "t5": "As Cambio Natural we convene spaces for dialogue where these different elements converge and facilitate them with tools, methods and connections to navigate tensions, build trust and nurture bold ideas worth failing for.",
+      "t6": "Online dialogue spaces",
+      "t7": ": Social Innovation for Planetary Health",
+      "t8": "From science to praxis",
+      "t9": "Watch video",
+      "t10": "Hosted by the Sustainability Research Innovation Summit, this was a participatory dialogue between practitioners from different cultural and geographical latitudes, across disciplines and sectors, aimed at discussing the transformations needed towards more desirable futures for our planet and species.",
+      "t11": "Community care gatherings",
+      "t12": "Hosted by Radici a Moncalieri we organized a three day gathering to eat, drink, laugh, cry, sing, sleep and take home (and share with others) lessons about resilience and strength from nature, other communities, and cultures that are successfully facing challenges today.",
+      "t13": "Transformative learning experiences",
+      "t14": "We co-organized the Global Doughnut Days Mexico 2025, a three day gathering focused on approaching alternative economic frameworks and practices - using the Doughnut Economics framework as guide, together with Coalición Tricolor, a member of the Doughnut Economics Action Lab community. The event included and serviced academics, government officials, business leaders and financiers.",
+      "t15": "Join to Newsletter",
+      "t16": "Lets Co-create",
+      "t17": "together",
+      "t18": "Short bi-monthly nuggets on Planetary Health, projects and researchs that are changing the world, delivered to your inbox - No spam, real action.",
+      "t19": "Cambio natural CC BY-NC-ND 4.0",
+      "t20": "Join to our waiting list for our Newsletter"
+    },
+    "images": {
+      "i1": {
+        "src": "/images/gathering-hero.png",
+        "alt": ""
+      },
+      "i2": {
+        "src": "/images/gathering-online-cn0301.png",
+        "alt": "Online dialogue gathering"
+      },
+      "i3": {
+        "src": "/images/gathering-care-cn0302.png",
+        "alt": "Community care gathering"
+      },
+      "i4": {
+        "src": "/images/gathering-care-cn0303.png",
+        "alt": "Community care gathering"
+      },
+      "i5": {
+        "src": "/images/gathering-doughnut-1.png",
+        "alt": "Doughnut gathering"
+      },
+      "i6": {
+        "src": "/images/gathering-doughnut-2.png",
+        "alt": "Doughnut gathering"
+      },
+      "i7": {
+        "src": "/images/gathering-doughnut-3.png",
+        "alt": "Doughnut gathering"
+      },
+      "i8": {
+        "src": "/images/newsletter-metacrisis.png",
+        "alt": ""
+      }
+    },
+    "links": {
+      "l1": "https://youtu.be/_QApShC_RxA"
+    }
+  },
+  "media-club": {
+    "seo": {
+      "title": "Media Club",
+      "description": "The Media Club is a shared learning and conversation circle for honest, thoughtful conversations about the media that shapes our lives. We meet every two months for a 90-minute virtual session to question our assumptions and imagine paths toward collective action."
+    },
+    "texts": {
+      "t1": "The Media Club is a space for honest, thoughtful conversations about",
+      "t2": "the media that shape our lives.",
+      "t3": "We explore how personal choices connect with larger structures like power, governance and earths natural systems, and what it means to act with responsibility in a world that asks us to rethink how we live and relate to one another.",
+      "t4": "This reading/listening/observing and conversation circle isn't a traditional book club. It's a place for people who want to understand our moment more deeply and imagine, together, new paths toward collective action. Each session invites us to slow down, pay attention carefully, and engage with ideas in a way that feels grounded. We connect what we read with our own experiences and look for the small openings where change becomes possible.",
+      "t5": "We meet once every two months for a 90-minute virtual session. The flow is simple but intentional: we begin with a short welcome and an icebreaker that helps us enter the piece of media; then we walk through the key ideas of the piece; after that, we open a guided conversation where everyone can share insights, questions, and reflections; and we close by exploring how these ideas can shape real decisions and real challenges in our daily lives and communities.",
+      "t6": "Access the club",
+      "t7": "Have you ever thought about how the each crisis are conected? theres critila point that detonate and internonect cisis in each context...",
+      "t8": "Article - Substrac",
+      "t9": "Failure as a tool for liberation",
+      "t10": "Read me",
+      "t11": "The Media Club is a shared learning space, a place to understand more clearly, question what we assume, and cultivate the ability to act with awareness, care, and imagination within the systems we all depend on.",
+      "t12": "Connection statement for building community and share knowledge",
+      "t13": "Cambio natural CC BY-NC-ND 4.0",
+      "t14": "This reading/listening/observing and conversation circle isn't a traditional book club. It's a place for people who want to understand our moment more deeply and imagine, together, new paths toward collective action. Each session invites us to slow down, pay attention carefully, and engage with ideas in a way that feels grounded. We connect what we read with our own experiences and look for the small openings where change becomes possible. We meet once every two months for a 90-minute virtual session. The flow is simple but intentional: we begin with a short welcome and an icebreaker that helps us enter the piece of media; then we walk through the key ideas of the piece; after that, we open a guided conversation where everyone can share insights, questions, and reflections; and we close by exploring how these ideas can shape real decisions and real challenges in our daily lives and communities.",
+      "t15": "Join to our waiting list for our Newsletter",
+      "t16": "Lets Co-create",
+      "t17": "together",
+      "t18": "Short bi-monthly nuggets on Planetary Health, projects and researchs that are changing the world, delivered to your inbox - No spam, real action."
+    },
+    "images": {
+      "i1": {
+        "src": "/images/rallitas-negro.png",
+        "alt": ""
+      },
+      "i2": {
+        "src": "/images/article-bdfm.png",
+        "alt": ""
+      },
+      "i3": {
+        "src": "/images/newsletter-metacrisis.png",
+        "alt": ""
+      }
+    },
+    "links": {
+      "l1": "https://cambionatural.dfos.com/"
+    }
+  },
+  "we-are": {
+    "seo": {
+      "title": "We Are",
+      "description": "Cambio Natural is a collective of practitioners committed to overcoming strategic polarization and embodying alternative futures for Planetary Health — meet the founding members, Cesar Jerónimo, Blaga and Marcelo, and our collaboration ecosystem."
+    },
+    "texts": {
+      "t1": "A collective of practitioners committed to overcome the increasing strategic polarization and how it hinders kinship and",
+      "t2": "Planetary Health.",
+      "t3": "All of us trying to make sense of the world and how to",
+      "t4": "embody alternative futures",
+      "t5": ".",
+      "t6": "We offer tools and spaces for dialogue and collaboration, supporting bridge builders and caregivers with methods, meetings and communities. We come from different cultures and geographies, both nomads and place based individuals, who have met through shared spaces of study.",
+      "t7": "Our meta-methodology for social innovation for Planetary Health offers a guideline to align the attention and intention of diverse actors and bridge local knowledge and systems with global scientific and practical frameworks.",
+      "t8": "We participate in different virtual and physical spaces and engage with communities rooted in diverse ecosystems and bioregions to learn from their practice, wisdom and experience and together convene the elements that nourish local sanctuaries for alternative futures. We bring wisdom and practice from the margins to the focus of transformative actions guided by reciprocity, mutual care and regeneration.",
+      "t9": "Founding members",
+      "t10": "Cesar Jerónimo",
+      "t11": "Nomad born in Mexico who loves cultural and ecological diversity, supporting learning and community resilience across his path. Convening and facilitating collaboration for Planetary Health at Cambio Natural, with a focus on marginal practices and the most affected people and areas.",
+      "t12": "Blaga",
+      "t13": "A systems thinker, facilitator and bridge builder driven by curiosity and purpose. I believe that learning and unlearning from each other is key for building the future we desire. At Cambio Natural, I hope to spark collaborative action and work with people and organizations to lead the way to transforming food systems as a path towards Planetary Health.",
+      "t14": "Marcelo",
+      "t15": "Political scientist, communication specialist, and ethical-technology polemist, committed to building and nurturing new narratives that help people decolonize both their imagination and behavior. In my work with Cambio Natural, I aim to promote an integrative vision where complex thinking becomes a tool, not a barrier, for creating a world where many worlds can coexist.",
+      "t16": "Our collaboration ecosystem",
+      "t17": "with whom we have taken and shared nourishment:",
+      "t18": "Iran Sosa, Xalli Zuñiga, Ricardo Vazoli, Elena Aguilera, Giorgia Dalla Libera Marchori, Carolina Batista, Jonathan Jennings, Ramon Renzo Guinto, Giulia Sonetti, Carlos Faerron, Mona El Sherbini, Giulio Rubinelli, Samia Dumbuya, Andrea Sahagun, Nicolas Hoyo, Miguel Soto, Javier Zamora, Daniel Apiquian, Enrique Cervantes, Javier Lázaro García, Genoveva de la Peña, Diana Lopez, Javier Lázaro García, Eduardo Ortiz Dante Licona, Laura Pereira, Laura Orestano, Dina Hestad, Nicole De Paula, Vanessa Armendariz, Stephanie Gnissios, Ken Wilson, Chris H. Cullen, Jose DiBella, Mitzi László, Kateryna Kot, Margarita Bárcena, Ana Luisa Islas and many others joining.",
+      "t19": "Pancho maiz",
+      "t20": "Work in progress",
+      "t21": "Visit our metalabel",
+      "t22": "Discover what our community has created around the world, projects that are changing the local environments",
+      "t23": "Subscribe",
+      "t24": "Our  core elements",
+      "t25": "how do we redefine our relation ",
+      "t26": "with the ecosystem around and inside us?",
+      "t27": "how do we share different types of value",
+      "t28": "with reciprocity and care?",
+      "t29": "which technologies are relevant for",
+      "t30": "the birth of the futures we desire?",
+      "t31": "how do we organize and collaborate",
+      "t32": "centering ecosystemic kinship?",
+      "t33": "Cambio natural CC BY-NC-ND 4.0",
+      "t34": "We offer tools and spaces for dialogue and collaboration, supporting bridge builders and caregivers with methods, meetings and communities. We come from different cultures and geographies, both nomads and place based individuals, who have met through shared spaces of study. Our meta-methodology for social innovation for Planetary Health offers a guideline to align the attention and intention of diverse actors and bridge local knowledge and systems with global scientific and practical frameworks. We participate in different virtual and physical spaces and engage with communities rooted in diverse ecosystems and bioregions to learn from their practice, wisdom and experience and together convene the elements that nourish local sanctuaries for alternative futures. We bring wisdom and practice from the margins to the focus of transformative actions guided by reciprocity, mutual care and regeneration.",
+      "t35": "A community showcase portfolio",
+      "t36": "join to our metalabel",
+      "t37": "Do you want to discover what more our community has created?",
+      "t38": "Explore Our Projects",
+      "t39": "Our core elements",
+      "t40": "how do we share different types of value ",
+      "t41": "Join to our waiting list for our Newsletter",
+      "t42": "Lets Co-create",
+      "t43": "together",
+      "t44": "Short bi-monthly nuggets on Planetary Health, projects and researchs that are changing the world, delivered to your inbox - No spam, real action."
+    },
+    "images": {
+      "i1": {
+        "src": "/images/partner-113.png",
+        "alt": "Partner organization"
+      },
+      "i2": {
+        "src": "/images/partner-114.png",
+        "alt": "Partner organization"
+      },
+      "i3": {
+        "src": "/images/partner-115.png",
+        "alt": "Partner organization"
+      },
+      "i4": {
+        "src": "/images/partner-116.png",
+        "alt": "Partner organization"
+      },
+      "i5": {
+        "src": "/images/partner-117.png",
+        "alt": "Partner organization"
+      },
+      "i6": {
+        "src": "/images/partner-118.png",
+        "alt": "Partner organization"
+      },
+      "i7": {
+        "src": "/images/partner-119.png",
+        "alt": "Partner organization"
+      },
+      "i8": {
+        "src": "/images/partner-120-pancho-maiz.png",
+        "alt": "Pancho maiz"
+      },
+      "i9": {
+        "src": "/images/partner-122.png",
+        "alt": "Partner organization"
+      },
+      "i10": {
+        "src": "/images/partner-123.png",
+        "alt": "Partner organization"
+      },
+      "i11": {
+        "src": "/images/partner-124.png",
+        "alt": "Partner organization"
+      },
+      "i12": {
+        "src": "/images/partner-125.png",
+        "alt": "Partner organization"
+      },
+      "i13": {
+        "src": "/images/partner-126.png",
+        "alt": "Partner organization"
+      },
+      "i14": {
+        "src": "/images/partner-127.png",
+        "alt": "Partner organization"
+      },
+      "i15": {
+        "src": "/images/partner-128.png",
+        "alt": "Partner organization"
+      },
+      "i16": {
+        "src": "/images/partner-129.png",
+        "alt": "Partner organization"
+      },
+      "i17": {
+        "src": "/images/partner-130.png",
+        "alt": "Partner organization"
+      },
+      "i18": {
+        "src": "/images/partner-131.png",
+        "alt": "Partner organization"
+      },
+      "i19": {
+        "src": "/images/partner-134.png",
+        "alt": "Partner organization"
+      },
+      "i20": {
+        "src": "/images/partner-135.png",
+        "alt": "Partner organization"
+      },
+      "i21": {
+        "src": "/images/partner-136.png",
+        "alt": "Partner organization"
+      },
+      "i22": {
+        "src": "/images/partner-137.png",
+        "alt": "Partner organization"
+      },
+      "i23": {
+        "src": "/images/partner-138.png",
+        "alt": "Partner organization"
+      },
+      "i24": {
+        "src": "/images/partner-139.png",
+        "alt": "Partner organization"
+      },
+      "i25": {
+        "src": "/images/cn-0104-2.png",
+        "alt": ""
+      },
+      "i26": {
+        "src": "/images/team-cesar.png",
+        "alt": "Cesar Jerónimo"
+      },
+      "i27": {
+        "src": "/images/team-blaga.png",
+        "alt": "Blaga"
+      },
+      "i28": {
+        "src": "/images/team-marcelo.png",
+        "alt": "Marcelo"
+      },
+      "i29": {
+        "src": "/images/metacrisis-article-2.png",
+        "alt": ""
+      },
+      "i30": {
+        "src": "/images/figuras-azules.png",
+        "alt": ""
+      },
+      "i31": {
+        "src": "/images/cn-0105-1.png",
+        "alt": ""
+      },
+      "i32": {
+        "src": "/images/puntos-rosas.png",
+        "alt": ""
+      },
+      "i33": {
+        "src": "/images/cn-0106-1.png",
+        "alt": ""
+      },
+      "i34": {
+        "src": "/images/newsletter-metacrisis.png",
+        "alt": ""
+      }
+    },
+    "links": {
+      "l1": "https://cambionatural.metalabel.com/"
+    }
+  }
+}

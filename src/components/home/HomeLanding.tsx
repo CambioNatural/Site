@@ -2,7 +2,7 @@ import Image from "next/image";
 import SectionDots from "@/components/SectionDots";
 import Navbar from "@/components/Navbar";
 import SubstackEmbed from "@/components/SubstackEmbed";
-import type { HomeContent, ResponsiveCopy } from "@/content/home";
+import type { ResponsiveCopy } from "@/content/home";
 import type { CmsDocument } from "@/lib/cms/schema";
 import styles from "./home.module.css";
 
@@ -11,7 +11,7 @@ function Copy({ value }: { value: ResponsiveCopy }) {
   return <><span className={styles.desktopCopy}>{value.text}</span><span className={styles.mobileCopy}>{value.mobileText}</span></>;
 }
 
-export default function HomeLanding({ content, navigation, preview = false }: { content: HomeContent; navigation?: CmsDocument["navigation"]; preview?: boolean }) {
+export default function HomeLanding({ content, navigation, newsletterUrl, preview = false }: { content: CmsDocument['home']; newsletterUrl?:string; navigation?: CmsDocument["navigation"]; preview?: boolean }) {
   return (
     <div className={`${styles.page} scroll-navigation-page`}>
       <a className={styles.skipLink} href="#main-content">Skip to content</a>
@@ -19,8 +19,8 @@ export default function HomeLanding({ content, navigation, preview = false }: { 
       <SectionDots />
       <main id="main-content" tabIndex={-1}>
         <section data-scroll-section="Introduction" className={styles.hero} aria-labelledby="home-heading">
-          <Image unoptimized={preview} className={styles.leaf} src="/images/nature-svg-white.svg" width={458} height={489} alt="" aria-hidden />
-          <Image unoptimized={preview} className={styles.yellow} src="/images/yellow-curve.png" width={424} height={446} alt="" aria-hidden />
+          <Image unoptimized={preview} className={styles.leaf} src={content.hero.leaf.src} width={458} height={489} alt="" aria-hidden />
+          <Image unoptimized={preview} className={styles.yellow} src={content.hero.yellow.src} width={424} height={446} alt="" aria-hidden />
           <div className={styles.container}>
             <h1 id="home-heading" className={styles.heroHeading}>
               <span className={styles.heroIntro}><Copy value={content.hero.intro} /></span>
@@ -28,7 +28,7 @@ export default function HomeLanding({ content, navigation, preview = false }: { 
             </h1>
             <div className={styles.wordmarkRow}>
               <Image unoptimized={preview} className={styles.wordmark} {...content.hero.wordmark} alt={content.hero.wordmark.alt} width={663} height={106} sizes="(max-width: 767px) 75vw, 663px" />
-              <Image unoptimized={preview} className={styles.pinkCircle} src="/images/cn-0104-2.png" width={210} height={210} alt="" aria-hidden sizes="(max-width: 767px) 18vw, 210px" />
+              <Image unoptimized={preview} className={styles.pinkCircle} src={content.hero.accent.src} width={210} height={210} alt="" aria-hidden sizes="(max-width: 767px) 18vw, 210px" />
             </div>
           </div>
         </section>
@@ -37,25 +37,11 @@ export default function HomeLanding({ content, navigation, preview = false }: { 
           <Image unoptimized={preview} className={styles.bridge} {...content.about.image} alt={content.about.image.alt} width={431} height={271} sizes="(max-width: 767px) 90vw, 40vw" />
         </section>
         <section id="core-elements" data-scroll-section="Core elements" className={styles.coreCompact} aria-labelledby="core-elements-heading">
-          <h2 id="core-elements-heading">Our core elements</h2>
-          <div className={styles.coreGrid}>
-            <article>
-              <Image className={styles.coreNature} src="/images/figuras-azules.png" width={128} height={128} alt="" unoptimized={preview} />
-              <p><strong>how do we redefine our relation</strong> with the ecosystem around and inside us?</p>
-            </article>
-            <article>
-              <Image src="/images/cn-0105-1.png" width={128} height={128} alt="" unoptimized={preview} />
-              <p><strong>how do we share different types of value</strong> with reciprocity and care?</p>
-            </article>
-            <article>
-              <Image src="/images/puntos-rosas.png" width={128} height={128} alt="" unoptimized={preview} />
-              <p>which technologies are relevant for <strong>the birth of the futures we desire?</strong></p>
-            </article>
-            <article>
-              <Image src="/images/cn-0106-1.png" width={128} height={128} alt="" unoptimized={preview} />
-              <p>how do we organize and collaborate <strong>centering ecosystemic kinship?</strong></p>
-            </article>
-          </div>
+          <h2 id="core-elements-heading">{content.coreHeading}</h2>
+          <div className={styles.coreGrid}>{content.coreElements.map((element,index)=><article key={index}>
+            <Image className={index===0?styles.coreNature:undefined} {...element.image} width={128} height={128} alt={element.image.alt} unoptimized={preview}/>
+            <p>{element.before}<strong>{element.emphasis}</strong>{element.after}</p>
+          </article>)}</div>
         </section>
         <section data-scroll-section="Initiatives" className={`${styles.container} ${styles.initiatives}`} aria-labelledby="initiatives-heading">
           <h2 id="initiatives-heading" className={styles.sectionHeading}>{content.initiativesHeading}</h2>
@@ -88,7 +74,7 @@ export default function HomeLanding({ content, navigation, preview = false }: { 
           </div>
           <div className={styles.newsletterMedia}>
             <Image unoptimized={preview} className={styles.newsletterImage} {...content.newsletter.image} alt={content.newsletter.image.alt} width={398} height={270} sizes="(max-width: 767px) 90vw, 398px" />
-            <SubstackEmbed />
+            <SubstackEmbed url={newsletterUrl}/>
           </div>
         </section>
       </main>

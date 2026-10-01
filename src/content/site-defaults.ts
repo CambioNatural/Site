@@ -1,0 +1,7 @@
+export const coreElements=[
+ {before:'',emphasis:'how do we redefine our relation',after:' with the ecosystem around and inside us?',image:{src:'/images/figuras-azules.png',alt:''}},
+ {before:'',emphasis:'how do we share different types of value',after:' with reciprocity and care?',image:{src:'/images/cn-0105-1.png',alt:''}},
+ {before:'which technologies are relevant for ',emphasis:'the birth of the futures we desire?',after:'',image:{src:'/images/puntos-rosas.png',alt:''}},
+ {before:'how do we organize and collaborate ',emphasis:'centering ecosystemic kinship?',after:'',image:{src:'/images/cn-0106-1.png',alt:''}},
+];
+export const blogCopy={title:'Blog',intro:'Ideas, stories and conversations for a healthier planet.',more:'More stories',stories:'Stories',story:'story',storiesCount:'stories',read:'Read story',minutes:'min read',emptyTitle:'A space for what comes next.',emptyBody:'Our first stories are on their way. In the meantime, explore the conversations in our Media Club.',emptyLink:'Explore the Media Club',newer:'← Newer stories',older:'Older stories →',page:'Page',of:'of',all:'← All stories',back:'← Back to all stories',top:'Back to top ↑',related:'Keep exploring',closeTitle:'Keep the conversation going.',closeBody:'Read, listen and exchange ideas with the Media Club.',closeLink:'Meet the Media Club',mediaHref:'/media-club',seoTitle:'Blog',seoDescription:'Ideas, stories and conversations for a healthier planet. Explore the Cambio Natural blog.'};

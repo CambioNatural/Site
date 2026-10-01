@@ -7,7 +7,7 @@ import { navigationContent } from "@/content/navigation";
 import styles from "./navbar.module.css";
 
 export interface NavbarProps {
-  navigation?: {links: readonly {label: string; href: string}[]; booking: {label: string; href: string}};
+  navigation?: {brand?:readonly [string,string];blogLabel?:string;links: readonly {label: string; href: string}[]; booking: {label: string; href: string}};
   bg?: string;
   textColor?: string;
   ctaBg?: string;
@@ -16,7 +16,7 @@ export interface NavbarProps {
 
 export default function NavbarClient({ navigation = navigationContent, bg = "bg-white", textColor = "text-black", ctaBg = "bg-[#f90068]", ctaText = "text-white" }: NavbarProps) {
   const pathname = usePathname();
-  const links = navigation.links.some(link=>link.href==='/blog') ? navigation.links : [...navigation.links,{label:'Blog',href:'/blog'}];
+  const links = navigation.links.some(link=>link.href==='/blog') ? navigation.links : [...navigation.links,{label:navigation.blogLabel??'Blog',href:'/blog'}];
   const [openPath, setOpenPath] = useState<string | null>(null);
   const menuOpen = openPath === pathname;
   const toggle = useRef<HTMLButtonElement>(null);
@@ -31,7 +31,7 @@ export default function NavbarClient({ navigation = navigationContent, bg = "bg-
       }}>
       <div className={styles.inner}>
         <Link href="/" className={styles.logo} onClick={() => setOpenPath(null)}>
-          <span>cambio</span><span>natural</span>
+          <span>{navigation.brand?.[0]??'cambio'}</span><span>{navigation.brand?.[1]??'natural'}</span>
         </Link>
         <button ref={toggle} type="button" className={styles.toggle} aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen} aria-controls="navigation-links" onClick={() => setOpenPath(menuOpen ? null : pathname)}>
