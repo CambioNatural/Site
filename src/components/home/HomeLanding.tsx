@@ -36,6 +36,27 @@ export default function HomeLanding({ content, navigation, preview = false }: { 
           <p><strong>{content.about.emphasis}</strong>{" "}{content.about.body}</p>
           <Image unoptimized={preview} className={styles.bridge} {...content.about.image} alt={content.about.image.alt} width={431} height={271} sizes="(max-width: 767px) 90vw, 40vw" />
         </section>
+        <section id="core-elements" data-scroll-section="Core elements" className={styles.coreCompact} aria-labelledby="core-elements-heading">
+          <h2 id="core-elements-heading">Our core elements</h2>
+          <div className={styles.coreGrid}>
+            <article>
+              <Image className={styles.coreNature} src="/images/figuras-azules.png" width={128} height={128} alt="" unoptimized={preview} />
+              <p><strong>how do we redefine our relation</strong> with the ecosystem around and inside us?</p>
+            </article>
+            <article>
+              <Image src="/images/cn-0105-1.png" width={128} height={128} alt="" unoptimized={preview} />
+              <p><strong>how do we share different types of value</strong> with reciprocity and care?</p>
+            </article>
+            <article>
+              <Image src="/images/puntos-rosas.png" width={128} height={128} alt="" unoptimized={preview} />
+              <p>which technologies are relevant for <strong>the birth of the futures we desire?</strong></p>
+            </article>
+            <article>
+              <Image src="/images/cn-0106-1.png" width={128} height={128} alt="" unoptimized={preview} />
+              <p>how do we organize and collaborate <strong>centering ecosystemic kinship?</strong></p>
+            </article>
+          </div>
+        </section>
         <section data-scroll-section="Initiatives" className={`${styles.container} ${styles.initiatives}`} aria-labelledby="initiatives-heading">
           <h2 id="initiatives-heading" className={styles.sectionHeading}>{content.initiativesHeading}</h2>
           <div className={styles.initiativeGrid}>
