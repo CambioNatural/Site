@@ -1,3 +1,4 @@
+import CmsText from "@/components/CmsText";
 import Navbar from "@/components/Navbar";
 import DesktopScale from "@/components/DesktopScale";
 import SectionDots from "@/components/SectionDots";
@@ -77,26 +78,26 @@ const mobilePartnerLogos = [
               style={{ filter: "brightness(0) invert(1)" }} />
           </div>
 
-          <p className="absolute font-[family-name:var(--font-body)] text-[38px] text-white leading-[100.5%]" style={{ left: 388, top: 234, width: 892 }}>{content.texts.t1}{" "}
-            <span className="underline">{content.texts.t2}</span>{" "}{content.texts.t3}{" "}
-            <span className="font-[family-name:var(--font-heading)] leading-[1.216]">{content.texts.t4}</span>{content.texts.t5}</p>
+          <p className="absolute font-[family-name:var(--font-body)] text-[38px] text-white leading-[100.5%]" style={{ left: 388, top: 234, width: 892 }}><CmsText text={content.texts.t1}/>{" "}
+            <span className="underline"><CmsText text={content.texts.t2}/></span>{" "}<CmsText text={content.texts.t3}/>{" "}
+            <span className="font-[family-name:var(--font-heading)] leading-[1.216]"><CmsText text={content.texts.t4}/></span><CmsText text={content.texts.t5}/></p>
 
-          <p className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[1.216]" style={{ left: 388, top: 806, width: 892 }}>{content.texts.t6}</p>
+          <p className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[1.216]" style={{ left: 388, top: 806, width: 892 }}><CmsText text={content.texts.t6}/></p>
 
           <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 160, top: 1045, width: 1120 }}>
-            <p>{content.texts.t7}</p>
-            <p className="mt-4">{content.texts.t8}</p>
+            <p><CmsText text={content.texts.t7}/></p>
+            <p className="mt-4"><CmsText text={content.texts.t8}/></p>
           </div>
 
-          <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[40px] text-white text-center leading-[1.216]" style={{ left: 320, top: 1493, width: 801 }}>{content.texts.t9}</p>
+          <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[40px] text-white text-center leading-[1.216]" style={{ left: 320, top: 1493, width: 801 }}><CmsText text={content.texts.t9}/></p>
 
           {/* Cesar */}
           <div data-scroll-section="Cesar" className="absolute overflow-hidden rounded-lg" style={{ left: 887, top: 1675, width: 350, height: 350 }}>
             <img src={content.images.i26.src} alt={content.images.i26.alt} className="w-full h-full object-cover" />
           </div>
           <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 160, top: 1750, width: 664 }}>
-            <p className="font-[family-name:var(--font-heading)] leading-[1.216]">{content.texts.t10}</p>
-            <p className="mt-2">{content.texts.t11}</p>
+            <p className="font-[family-name:var(--font-heading)] leading-[1.216]"><CmsText text={content.texts.t10}/></p>
+            <p className="mt-2"><CmsText text={content.texts.t11}/></p>
           </div>
 
           {/* Blaga */}
@@ -104,8 +105,8 @@ const mobilePartnerLogos = [
             <img src={content.images.i27.src} alt={content.images.i27.alt} className="w-full h-full object-cover" />
           </div>
           <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 616, top: 2260, width: 664 }}>
-            <p className="font-[family-name:var(--font-heading)] leading-[1.216]">{content.texts.t12}</p>
-            <p className="mt-2">{content.texts.t13}</p>
+            <p className="font-[family-name:var(--font-heading)] leading-[1.216]"><CmsText text={content.texts.t12}/></p>
+            <p className="mt-2"><CmsText text={content.texts.t13}/></p>
           </div>
 
           {/* Marcelo */}
@@ -113,16 +114,16 @@ const mobilePartnerLogos = [
             <img src={content.images.i28.src} alt={content.images.i28.alt} className="w-full h-full object-cover" />
           </div>
           <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-white leading-[100.5%]" style={{ left: 160, top: 2931, width: 664 }}>
-            <p className="font-[family-name:var(--font-heading)] leading-[1.216]">{content.texts.t14}</p>
-            <p className="mt-2">{content.texts.t15}</p>
+            <p className="font-[family-name:var(--font-heading)] leading-[1.216]"><CmsText text={content.texts.t14}/></p>
+            <p className="mt-2"><CmsText text={content.texts.t15}/></p>
           </div>
 
           {/* Collaboration ecosystem */}
           <div data-scroll-section="Collaboration ecosystem" className="absolute font-[family-name:var(--font-body)] text-[29px] text-black" style={{ left: 159, top: 3536, width: 399 }}>
-            <p className="font-[family-name:var(--font-heading)] leading-[1.216]">{content.texts.t16}</p>
-            <p className="leading-[1.216]">{content.texts.t17}</p>
+            <p className="font-[family-name:var(--font-heading)] leading-[1.216]"><CmsText text={content.texts.t16}/></p>
+            <p className="leading-[1.216]"><CmsText text={content.texts.t17}/></p>
           </div>
-          <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[100.5%] tracking-[-0.29px]" style={{ left: 616, top: 3534, width: 664 }}>{content.texts.t18}</p>
+          <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[100.5%] tracking-[-0.29px]" style={{ left: 616, top: 3534, width: 664 }}><CmsText text={content.texts.t18}/></p>
 
           {/* Partner logos */}
           {partnerLogos.map((logo, i) => (
@@ -130,32 +131,32 @@ const mobilePartnerLogos = [
               <img src={logo.src} alt={logo.alt} className="w-full h-full object-contain" />
             </div>
           ))}
-          <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[16px] text-black text-center leading-[1.216]" style={{ left: 615, top: 4396, width: 209 }}>{content.texts.t19}</p>
+          <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[16px] text-black text-center leading-[1.216]" style={{ left: 615, top: 4396, width: 209 }}><CmsText text={content.texts.t19}/></p>
 
           {/* Metalabel CTA */}
           <div data-scroll-section="Metalabel" className="absolute bg-[#c4e3ff]" style={{ left: 0, top: 5032, width: 1441, height: 497 }}>
-            <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216] tracking-[0.36px]" style={{ left: 160, top: 155 }}>{content.texts.t20}</p>
-            <h2 className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216] tracking-[0.58px]" style={{ left: 160, top: 188, width: 436 }}>{content.texts.t21}</h2>
-            <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216] tracking-[0.36px]" style={{ left: 160, top: 275, width: 364 }}>{content.texts.t22}</p>
+            <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216] tracking-[0.36px]" style={{ left: 160, top: 155 }}><CmsText text={content.texts.t20}/></p>
+            <h2 className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216] tracking-[0.58px]" style={{ left: 160, top: 188, width: 436 }}><CmsText text={content.texts.t21}/></h2>
+            <p className="absolute font-[family-name:var(--font-body)] text-[18px] text-black leading-[1.216] tracking-[0.36px]" style={{ left: 160, top: 275, width: 364 }}><CmsText text={content.texts.t22}/></p>
             <div className="absolute rounded-tr-[267px] overflow-hidden" style={{ left: 635, top: 72, width: 398, height: 270 }}>
               <img src={content.images.i29.src} alt={content.images.i29.alt} className="w-full h-full object-cover" />
             </div>
             <div className="absolute bg-white border border-black rounded-[5px]" style={{ left: 616, top: 321, width: 436, height: 42 }} />
             <div className="absolute bg-black rounded-[5px]" style={{ left: 1072, top: 321, width: 208, height: 42 }}>
-              <span className="absolute inset-0 flex items-center justify-center font-[family-name:var(--font-body)] text-[18px] text-white tracking-[0.36px]">{content.texts.t23}</span>
+              <span className="absolute inset-0 flex items-center justify-center font-[family-name:var(--font-body)] text-[18px] text-white tracking-[0.36px]"><CmsText text={content.texts.t23}/></span>
             </div>
           </div>
 
           {/* Core elements */}
-          <p data-scroll-section="Core elements" className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 160, top: 5624, width: 475 }}>{content.texts.t24}</p>
+          <p data-scroll-section="Core elements" className="absolute font-[family-name:var(--font-heading)] uppercase text-[29px] text-black leading-[1.216]" style={{ left: 160, top: 5624, width: 475 }}><CmsText text={content.texts.t24}/></p>
 
           {/* Element 1: Nature/ecosystem — blue blob */}
           <div className="absolute overflow-hidden rounded-[100px_130px_100px_200px]" style={{ left: 160, top: 5724, width: 423, height: 446 }}>
             <img src={content.images.i30.src} alt={content.images.i30.alt} className="absolute inset-0 w-full h-full object-cover" style={{ objectPosition: "45% 30%" }} />
           </div>
           <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-black leading-[100.5%]" style={{ left: 616, top: 5836, width: 694 }}>
-            <p><span className="font-[family-name:var(--font-heading)] leading-[1.216]">{content.texts.t25}</span></p>
-            <p>{content.texts.t26}</p>
+            <p><span className="font-[family-name:var(--font-heading)] leading-[1.216]"><CmsText text={content.texts.t25}/></span></p>
+            <p><CmsText text={content.texts.t26}/></p>
           </div>
 
           {/* Element 2: Economy/value — yellow grid ring */}
@@ -163,8 +164,8 @@ const mobilePartnerLogos = [
             <img src={content.images.i31.src} alt={content.images.i31.alt} className="absolute inset-0 w-full h-full object-cover" />
           </div>
           <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-black leading-[100.5%]" style={{ left: 160, top: 6256, width: 664 }}>
-            <p className="font-[family-name:var(--font-heading)] leading-[1.216] tracking-[-0.16px]">{content.texts.t27}</p>
-            <p>{content.texts.t28}</p>
+            <p className="font-[family-name:var(--font-heading)] leading-[1.216] tracking-[-0.16px]"><CmsText text={content.texts.t27}/></p>
+            <p><CmsText text={content.texts.t28}/></p>
           </div>
 
           {/* Element 3: Technology — pink dots circle */}
@@ -172,8 +173,8 @@ const mobilePartnerLogos = [
             <img src={content.images.i32.src} alt={content.images.i32.alt} className="absolute inset-0 w-full h-full object-cover" />
           </div>
           <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-black leading-[100.5%]" style={{ left: 616, top: 6611, width: 694 }}>
-            <p>{content.texts.t29}</p>
-            <p className="font-[family-name:var(--font-heading)] leading-[1.216]">{content.texts.t30}</p>
+            <p><CmsText text={content.texts.t29}/></p>
+            <p className="font-[family-name:var(--font-heading)] leading-[1.216]"><CmsText text={content.texts.t30}/></p>
           </div>
 
           {/* Element 4: Community/kinship — green wavy ring */}
@@ -181,13 +182,13 @@ const mobilePartnerLogos = [
             <img src={content.images.i33.src} alt={content.images.i33.alt} className="absolute inset-0 w-full h-full object-cover" />
           </div>
           <div className="absolute font-[family-name:var(--font-body)] text-[29px] text-black leading-[100.5%]" style={{ left: 160, top: 7031, width: 664 }}>
-            <p>{content.texts.t31}</p>
-            <p className="font-[family-name:var(--font-heading)] leading-[1.216]">{content.texts.t32}</p>
+            <p><CmsText text={content.texts.t31}/></p>
+            <p className="font-[family-name:var(--font-heading)] leading-[1.216]"><CmsText text={content.texts.t32}/></p>
           </div>
 
           {/* Footer */}
           <div className="absolute bg-white shadow-[0px_-1px_4px_0px_rgba(0,0,0,0.25)]" style={{ left: 0, top: 7470, width: 1440, height: 105 }}>
-            <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[17px] text-black leading-[1.216]" style={{ left: 160, top: 34 }}>{content.texts.t33}</p>
+            <p className="absolute font-[family-name:var(--font-heading)] uppercase text-[17px] text-black leading-[1.216]" style={{ left: 160, top: 34 }}><CmsText text={content.texts.t33}/></p>
           </div>
         </div>
         </DesktopScale>
@@ -201,26 +202,26 @@ const mobilePartnerLogos = [
             <img src={content.images.i32.src} alt={content.images.i32.alt} className="w-full h-full object-cover" />
           </div>
           <div style={{ paddingLeft: 95 }}>
-            <p className="font-[family-name:var(--font-body)] text-[18px] text-white leading-[1.3]">{content.texts.t1}{" "}
-              <span className="underline">{content.texts.t2}</span>{" "}{content.texts.t3}{" "}
-              <span className="font-[family-name:var(--font-heading)] leading-[1.216]">{content.texts.t4}</span>{content.texts.t5}</p>
+            <p className="font-[family-name:var(--font-body)] text-[18px] text-white leading-[1.3]"><CmsText text={content.texts.t1}/>{" "}
+              <span className="underline"><CmsText text={content.texts.t2}/></span>{" "}<CmsText text={content.texts.t3}/>{" "}
+              <span className="font-[family-name:var(--font-heading)] leading-[1.216]"><CmsText text={content.texts.t4}/></span><CmsText text={content.texts.t5}/></p>
           </div>
         </div>
 
         {/* About */}
         <div className="px-4 pb-6">
-          <p className="font-[family-name:var(--font-body)] text-[15px] text-white leading-[1.4] mb-4">{content.texts.t34}</p>
+          <p className="font-[family-name:var(--font-body)] text-[15px] text-white leading-[1.4] mb-4"><CmsText text={content.texts.t34}/></p>
         </div>
 
         {/* Founding members */}
         <div className="px-4 pb-6">
-          <p className="font-[family-name:var(--font-heading)] uppercase text-[28px] text-white leading-[1.2] mb-6">{content.texts.t9}</p>
+          <p className="font-[family-name:var(--font-heading)] uppercase text-[28px] text-white leading-[1.2] mb-6"><CmsText text={content.texts.t9}/></p>
 
           {/* Cesar */}
           <div data-scroll-section="Cesar" className="flex gap-4 mb-6">
             <div className="flex-1">
-              <p className="font-[family-name:var(--font-heading)] text-[18px] text-white leading-[1.2] mb-1">{content.texts.t10}</p>
-              <p className="font-[family-name:var(--font-body)] text-[14px] text-white leading-[1.4]">{content.texts.t11}</p>
+              <p className="font-[family-name:var(--font-heading)] text-[18px] text-white leading-[1.2] mb-1"><CmsText text={content.texts.t10}/></p>
+              <p className="font-[family-name:var(--font-body)] text-[14px] text-white leading-[1.4]"><CmsText text={content.texts.t11}/></p>
             </div>
             <div className="overflow-hidden rounded-lg shrink-0" style={{ width: 132, height: 137 }}>
               <img src={content.images.i26.src} alt={content.images.i26.alt} className="w-full h-full object-cover" />
@@ -233,16 +234,16 @@ const mobilePartnerLogos = [
               <img src={content.images.i27.src} alt={content.images.i27.alt} className="w-full h-full object-cover" />
             </div>
             <div className="flex-1">
-              <p className="font-[family-name:var(--font-heading)] text-[18px] text-white leading-[1.2] mb-1">{content.texts.t12}</p>
-              <p className="font-[family-name:var(--font-body)] text-[14px] text-white leading-[1.4]">{content.texts.t13}</p>
+              <p className="font-[family-name:var(--font-heading)] text-[18px] text-white leading-[1.2] mb-1"><CmsText text={content.texts.t12}/></p>
+              <p className="font-[family-name:var(--font-body)] text-[14px] text-white leading-[1.4]"><CmsText text={content.texts.t13}/></p>
             </div>
           </div>
 
           {/* Marcelo */}
           <div data-scroll-section="Marcelo" className="flex gap-4 mb-6">
             <div className="flex-1">
-              <p className="font-[family-name:var(--font-heading)] text-[18px] text-white leading-[1.2] mb-1">{content.texts.t14}</p>
-              <p className="font-[family-name:var(--font-body)] text-[14px] text-white leading-[1.4]">{content.texts.t15}</p>
+              <p className="font-[family-name:var(--font-heading)] text-[18px] text-white leading-[1.2] mb-1"><CmsText text={content.texts.t14}/></p>
+              <p className="font-[family-name:var(--font-body)] text-[14px] text-white leading-[1.4]"><CmsText text={content.texts.t15}/></p>
             </div>
             <div className="overflow-hidden rounded-lg shrink-0" style={{ width: 134, height: 144 }}>
               <img src={content.images.i28.src} alt={content.images.i28.alt} className="w-full h-full object-cover" />
@@ -252,9 +253,9 @@ const mobilePartnerLogos = [
 
         {/* Collaboration ecosystem — white section */}
         <div data-scroll-section="Collaboration ecosystem" className="bg-white px-4 py-8">
-          <p className="font-[family-name:var(--font-heading)] text-[20px] text-black leading-[1.2] mb-1">{content.texts.t16}</p>
-          <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.3] mb-4">{content.texts.t17}</p>
-          <p className="font-[family-name:var(--font-body)] text-[13px] text-black leading-[1.5] mb-6">{content.texts.t18}</p>
+          <p className="font-[family-name:var(--font-heading)] text-[20px] text-black leading-[1.2] mb-1"><CmsText text={content.texts.t16}/></p>
+          <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.3] mb-4"><CmsText text={content.texts.t17}/></p>
+          <p className="font-[family-name:var(--font-body)] text-[13px] text-black leading-[1.5] mb-6"><CmsText text={content.texts.t18}/></p>
 
           {/* Partner logos grid */}
           <div className="flex flex-wrap gap-4 items-center justify-start mb-6">
@@ -266,19 +267,19 @@ const mobilePartnerLogos = [
           </div>
 
           {/* Metalabel CTA */}
-          <p data-scroll-section="Metalabel" className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.3] mb-1">{content.texts.t35}</p>
-          <h2 className="font-[family-name:var(--font-heading)] uppercase text-[24px] text-black leading-[1.2] mb-3">{content.texts.t36}</h2>
-          <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.4] mb-4">{content.texts.t37}</p>
+          <p data-scroll-section="Metalabel" className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.3] mb-1"><CmsText text={content.texts.t35}/></p>
+          <h2 className="font-[family-name:var(--font-heading)] uppercase text-[24px] text-black leading-[1.2] mb-3"><CmsText text={content.texts.t36}/></h2>
+          <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.4] mb-4"><CmsText text={content.texts.t37}/></p>
           <div className="overflow-hidden rounded-lg mb-4" style={{ height: 103 }}>
             <img src={content.images.i29.src} alt={content.images.i29.alt} className="w-full h-full object-cover" />
           </div>
           <a href={content.links.l1} target="_blank" rel="noopener noreferrer"
-            className="block bg-black rounded-[5px] font-[family-name:var(--font-heading)] uppercase text-[16px] text-white text-center py-3 mb-6">{content.texts.t38}</a>
+            className="block bg-black rounded-[5px] font-[family-name:var(--font-heading)] uppercase text-[16px] text-white text-center py-3 mb-6"><CmsText text={content.texts.t38}/></a>
         </div>
 
         {/* Core elements — white section continues */}
         <div data-scroll-section="Core elements" className="bg-white px-4 pb-8">
-          <p className="font-[family-name:var(--font-heading)] uppercase text-[24px] text-black leading-[1.2] mb-6">{content.texts.t39}</p>
+          <p className="font-[family-name:var(--font-heading)] uppercase text-[24px] text-black leading-[1.2] mb-6"><CmsText text={content.texts.t39}/></p>
 
           {/* Element 1: Nature/ecosystem — blue blob */}
           <div className="flex gap-4 items-center mb-6">
@@ -286,13 +287,13 @@ const mobilePartnerLogos = [
               <img src={content.images.i30.src} alt={content.images.i30.alt} className="w-full h-full object-cover" style={{ objectPosition: "45% 30%" }} />
             </div>
             <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.4] flex-1">
-              <span className="font-[family-name:var(--font-heading)]">{content.texts.t25}</span>{content.texts.t26}</p>
+              <span className="font-[family-name:var(--font-heading)]"><CmsText text={content.texts.t25}/></span><CmsText text={content.texts.t26}/></p>
           </div>
 
           {/* Element 2: Economy/value — yellow grid ring */}
           <div className="flex gap-4 items-center mb-6">
             <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.4] flex-1">
-              <span className="font-[family-name:var(--font-heading)]">{content.texts.t40}</span>{content.texts.t28}</p>
+              <span className="font-[family-name:var(--font-heading)]"><CmsText text={content.texts.t40}/></span><CmsText text={content.texts.t28}/></p>
             <div className="overflow-hidden rounded-bl-[30px] shrink-0" style={{ width: 124, height: 123 }}>
               <img src={content.images.i31.src} alt={content.images.i31.alt} className="w-full h-full object-cover" />
             </div>
@@ -303,15 +304,15 @@ const mobilePartnerLogos = [
             <div className="overflow-hidden rounded-lg shrink-0" style={{ width: 164, height: 163 }}>
               <img src={content.images.i32.src} alt={content.images.i32.alt} className="w-full h-full object-cover" />
             </div>
-            <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.4] flex-1">{content.texts.t29}{" "}
-              <span className="font-[family-name:var(--font-heading)]">{content.texts.t30}</span>
+            <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.4] flex-1"><CmsText text={content.texts.t29}/>{" "}
+              <span className="font-[family-name:var(--font-heading)]"><CmsText text={content.texts.t30}/></span>
             </p>
           </div>
 
           {/* Element 4: Community/kinship — green wavy ring */}
           <div className="flex gap-4 items-center mb-6">
-            <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.4] flex-1">{content.texts.t31}{" "}
-              <span className="font-[family-name:var(--font-heading)]">{content.texts.t32}</span>
+            <p className="font-[family-name:var(--font-body)] text-[15px] text-black leading-[1.4] flex-1"><CmsText text={content.texts.t31}/>{" "}
+              <span className="font-[family-name:var(--font-heading)]"><CmsText text={content.texts.t32}/></span>
             </p>
             <div className="overflow-hidden rounded-lg shrink-0" style={{ width: 144, height: 135 }}>
               <img src={content.images.i33.src} alt={content.images.i33.alt} className="w-full h-full object-cover" />
@@ -321,9 +322,9 @@ const mobilePartnerLogos = [
 
         {/* Newsletter */}
         <div data-scroll-section="Newsletter" className="bg-white px-4 py-8 border-t border-black/10">
-          <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.3] mb-1">{content.texts.t41}</p>
-          <h2 className="font-[family-name:var(--font-heading)] uppercase text-[24px] text-black leading-[1.2] mb-3">{content.texts.t42}<br />{content.texts.t43}</h2>
-          <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.4] mb-4">{content.texts.t44}</p>
+          <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.3] mb-1"><CmsText text={content.texts.t41}/></p>
+          <h2 className="font-[family-name:var(--font-heading)] uppercase text-[24px] text-black leading-[1.2] mb-3"><CmsText text={content.texts.t42}/><br /><CmsText text={content.texts.t43}/></h2>
+          <p className="font-[family-name:var(--font-body)] text-[14px] text-black leading-[1.4] mb-4"><CmsText text={content.texts.t44}/></p>
           <div className="rounded-tr-[80px] overflow-hidden mb-4" style={{ height: 179 }}>
             <img src={content.images.i34.src} alt={content.images.i34.alt} className="w-full h-full object-cover" />
           </div>
@@ -332,7 +333,7 @@ const mobilePartnerLogos = [
 
         {/* Footer */}
         <div className="bg-white shadow-[0px_-1px_4px_0px_rgba(0,0,0,0.25)] px-4 py-3">
-          <p className="font-[family-name:var(--font-heading)] uppercase text-[13px] text-black leading-[1.216]">{content.texts.t33}</p>
+          <p className="font-[family-name:var(--font-heading)] uppercase text-[13px] text-black leading-[1.216]"><CmsText text={content.texts.t33}/></p>
         </div>
       </main>
     </div>

@@ -1,3 +1,4 @@
+import CmsText from "@/components/CmsText";
 import Image from "next/image";
 import SectionDots from "@/components/SectionDots";
 import Navbar from "@/components/Navbar";
@@ -7,8 +8,8 @@ import type { CmsDocument } from "@/lib/cms/schema";
 import styles from "./home.module.css";
 
 function Copy({ value }: { value: ResponsiveCopy }) {
-  if (!value.mobileText || value.mobileText === value.text) return value.text;
-  return <><span className={styles.desktopCopy}>{value.text}</span><span className={styles.mobileCopy}>{value.mobileText}</span></>;
+  if (!value.mobileText || value.mobileText === value.text) return <CmsText text={value.text}/>;
+  return <><span className={styles.desktopCopy}><CmsText text={value.text}/></span><span className={styles.mobileCopy}><CmsText text={value.mobileText}/></span></>;
 }
 
 export default function HomeLanding({ content, navigation, newsletterUrl, preview = false }: { content: CmsDocument['home']; newsletterUrl?:string; navigation?: CmsDocument["navigation"]; preview?: boolean }) {
@@ -24,7 +25,7 @@ export default function HomeLanding({ content, navigation, newsletterUrl, previe
           <div className={styles.container}>
             <h1 id="home-heading" className={styles.heroHeading}>
               <span className={styles.heroIntro}><Copy value={content.hero.intro} /></span>
-              <span className={styles.heroEmphasis}>{content.hero.heading}</span>
+              <span className={styles.heroEmphasis}><CmsText text={content.hero.heading}/></span>
             </h1>
             <div className={styles.wordmarkRow}>
               <Image unoptimized={preview} className={styles.wordmark} {...content.hero.wordmark} alt={content.hero.wordmark.alt} width={663} height={106} sizes="(max-width: 767px) 75vw, 663px" />
@@ -33,23 +34,23 @@ export default function HomeLanding({ content, navigation, newsletterUrl, previe
           </div>
         </section>
         <section data-scroll-section="About" className={`${styles.container} ${styles.about}`} aria-label="About Cambio Natural">
-          <p><strong>{content.about.emphasis}</strong>{" "}{content.about.body}</p>
+          <p><strong><CmsText text={content.about.emphasis}/></strong>{" "}<CmsText text={content.about.body}/></p>
           <Image unoptimized={preview} className={styles.bridge} {...content.about.image} alt={content.about.image.alt} width={431} height={271} sizes="(max-width: 767px) 90vw, 40vw" />
         </section>
         <section id="core-elements" data-scroll-section="Core elements" className={styles.coreCompact} aria-labelledby="core-elements-heading">
-          <h2 id="core-elements-heading">{content.coreHeading}</h2>
+          <h2 id="core-elements-heading"><CmsText text={content.coreHeading}/></h2>
           <div className={styles.coreGrid}>{content.coreElements.map((element,index)=><article key={index}>
             <Image className={index===0?styles.coreNature:undefined} {...element.image} width={128} height={128} alt={element.image.alt} unoptimized={preview}/>
-            <p>{element.before}<strong>{element.emphasis}</strong>{element.after}</p>
+            <p><CmsText text={element.before}/><strong><CmsText text={element.emphasis}/></strong><CmsText text={element.after}/></p>
           </article>)}</div>
         </section>
         <section data-scroll-section="Initiatives" className={`${styles.container} ${styles.initiatives}`} aria-labelledby="initiatives-heading">
-          <h2 id="initiatives-heading" className={styles.sectionHeading}>{content.initiativesHeading}</h2>
+          <h2 id="initiatives-heading" className={styles.sectionHeading}><CmsText text={content.initiativesHeading}/></h2>
           <div className={styles.initiativeGrid}>
             {content.initiatives.map((initiative) => (
               <article key={initiative.id} className={styles.initiative}>
                 <Image unoptimized={preview} className={styles.initiativeImage} {...initiative.image} alt={initiative.image.alt} width={200} height={200} sizes="(max-width: 767px) 100px, 200px" />
-                <h3>{initiative.title}</h3>
+                <h3><CmsText text={initiative.title}/></h3>
                 <p><Copy value={initiative.description} /></p>
               </article>
             ))}
@@ -58,9 +59,9 @@ export default function HomeLanding({ content, navigation, newsletterUrl, previe
         <section data-scroll-section="Featured article" className={`${styles.container} ${styles.articleSection}`} aria-labelledby="article-heading">
           <div className={styles.articleCard}>
             <div className={styles.articleText}>
-              <p>{content.article.category}</p>
-              <h2 id="article-heading">{content.article.title}</h2>
-              <a href={content.article.link.href} target="_blank" rel="noopener noreferrer">{content.article.link.label}<span className={styles.srOnly}> (opens in a new tab)</span></a>
+              <p><CmsText text={content.article.category}/></p>
+              <h2 id="article-heading"><CmsText text={content.article.title}/></h2>
+              <a href={content.article.link.href} target="_blank" rel="noopener noreferrer"><CmsText text={content.article.link.label}/><span className={styles.srOnly}> (opens in a new tab)</span></a>
             </div>
             <Image unoptimized={preview} className={styles.articleImage} {...content.article.image} alt={content.article.image.alt} width={208} height={155} sizes="(max-width: 767px) 35vw, 208px" />
             <p className={styles.articleExcerpt}><Copy value={content.article.excerpt} /></p>
@@ -69,8 +70,8 @@ export default function HomeLanding({ content, navigation, newsletterUrl, previe
         <section data-scroll-section="Newsletter" className={`${styles.container} ${styles.newsletter}`} aria-labelledby="newsletter-heading">
           <div className={styles.newsletterText}>
             <p><Copy value={content.newsletter.intro} /></p>
-            <h2 id="newsletter-heading">{content.newsletter.title}</h2>
-            <p>{content.newsletter.description}</p>
+            <h2 id="newsletter-heading"><CmsText text={content.newsletter.title}/></h2>
+            <p><CmsText text={content.newsletter.description}/></p>
           </div>
           <div className={styles.newsletterMedia}>
             <Image unoptimized={preview} className={styles.newsletterImage} {...content.newsletter.image} alt={content.newsletter.image.alt} width={398} height={270} sizes="(max-width: 767px) 90vw, 398px" />
@@ -78,7 +79,7 @@ export default function HomeLanding({ content, navigation, newsletterUrl, previe
           </div>
         </section>
       </main>
-      <footer className={styles.footer}><div className={styles.container}>{content.footer}</div></footer>
+      <footer className={styles.footer}><div className={styles.container}><CmsText text={content.footer}/></div></footer>
     </div>
   );
 }

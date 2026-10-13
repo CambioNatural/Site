@@ -3,7 +3,7 @@
 En `/admin`, abre **Páginas** y selecciona Home, Tools, Gatherings, Media Club, We Are, Blog o Ajustes generales.
 
 1. Selecciona una sección o busca el texto que quieres cambiar.
-2. Edita textos, reemplaza imágenes y actualiza enlaces. Las imágenes informativas deben tener texto alternativo.
+2. En los campos de texto multilínea, Enter crea un salto de línea y dos Enter separan párrafos con una línea vacía. Estos saltos se conservan en la vista previa y al publicar. Edita textos, reemplaza imágenes y actualiza enlaces. Las imágenes informativas deben tener texto alternativo.
 3. Guarda el borrador. Cambiar de página dentro del selector conserva las ediciones pendientes.
 4. Usa **Ver borrador** para revisar esa página. La vista previa requiere iniciar sesión.
 5. Publica y confirma cuando el conjunto de cambios esté aprobado.
