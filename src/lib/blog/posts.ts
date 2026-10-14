@@ -1,11 +1,12 @@
 import 'server-only';
+import {inlineImages} from '@/lib/entries/media';
 import {cache} from 'react';
 import {createClient} from '@supabase/supabase-js';
 import {blogSchema,type BlogContent} from '@/lib/entries/schema';
 export type BlogPost={id:string;slug:string;content:BlogContent;published_at:string};
 const fields='id,slug,content,published_at';
 function client(){return createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!,process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,{auth:{persistSession:false},global:{fetch:(url,options)=>fetch(url,{...options,cache:'no-store'})}});}
-function parse(row:BlogPost):BlogPost{const content=blogSchema.parse(row.content);if(content.image.startsWith('draft:'))throw new Error('Private image in public blog');return {...row,content};}
+function parse(row:BlogPost):BlogPost{const content=blogSchema.parse(row.content);if(content.image.startsWith('draft:')||inlineImages(content).some(node=>node.attrs!.src!.startsWith('draft:')))throw new Error('Private image in public blog');return {...row,content};}
 export async function listPosts(page=1,size=9,exclude?:string){
  let query=client().from('cms_entry_publications').select(fields,{count:'exact'}).eq('kind','blog').order('published_at',{ascending:false}).order('id');
  if(exclude)query=query.neq('id',exclude);

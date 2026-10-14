@@ -7,11 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test:cms": "node --import tsx --test tests/cms-schema.test.ts tests/entries-schema.test.ts tests/crm-schema.test.ts tests/admin-translations.test.ts tests/blog.test.tsx tests/site-pages.test.ts tests/cms-text.test.tsx"
+    "test:blog:db": "node tests/blog-publication-db.cjs",
+    "test:cms": "node --import tsx --test tests/cms-schema.test.ts tests/entries-schema.test.ts tests/crm-schema.test.ts tests/admin-translations.test.ts tests/blog.test.tsx tests/site-pages.test.ts tests/cms-text.test.tsx tests/blog-images.test.tsx"
   },
   "dependencies": {
     "@supabase/ssr": "0.12.7",
     "@supabase/supabase-js": "2.116.0",
+    "@tiptap/extension-image": "^3.31.3",
     "@tiptap/pm": "^3.31.3",
     "@tiptap/react": "^3.31.3",
     "@tiptap/starter-kit": "^3.31.3",
@@ -22,6 +24,7 @@
     "zod": "4.6.5"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "0.5.10",
     "@playwright/test": "^1.61.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

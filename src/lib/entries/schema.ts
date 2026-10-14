@@ -24,6 +24,7 @@ export type Entry = {
     version: number;
     updated_at: string;
     publishedVersion: number | null;
+    publishedSlug?: string | null;
 };
 export function parseEntry(kind: EntryKind, value: unknown): EntryContent { const r = (kind === 'blog' ? blogSchema : popupSchema).safeParse(value); if (!r.success)
     throw new Error(`${r.error.issues[0].path.join(' → ')}: ${r.error.issues[0].message}`); return r.data; }

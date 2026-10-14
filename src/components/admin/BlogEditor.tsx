@@ -1,16 +1,33 @@
 'use client';
-import {useEffect,useId,useState} from 'react';
+import {useEffect,useId,useRef,useState} from 'react';
 import {EditorContent,useEditor} from '@tiptap/react';
+import Image from '@tiptap/extension-image';
+import {imageSourceSchema} from '@/lib/cms/schema';
 import StarterKit from '@tiptap/starter-kit';
 import {normalizeRichText,plainToRichText,richTextToPlain,safeBlogUrl,type RichNode} from '@/lib/entries/rich-text';
 import {useAdminLanguage} from './AdminLanguage';
-export default function BlogEditor({body,richText,disabled,onChange}:{body:string;richText?:RichNode;disabled:boolean;onChange:(body:string,document:RichNode)=>void}){
+const BlogImage=Image.extend({
+ addAttributes(){return {...this.parent?.(),src:{default:null,renderHTML:attributes=>({src:attributes.src?.startsWith('draft:')?`/admin/media?path=${encodeURIComponent(attributes.src.slice(6))}`:attributes.src})}};},
+ parseHTML(){return [{tag:'img[src]',getAttrs:element=>imageSourceSchema.safeParse(element.getAttribute('src')).success?{}:false}];},
+});
+export default function BlogEditor({body,richText,disabled,onChange,uploadImage,onBusyChange}:{body:string;richText?:RichNode;disabled:boolean;uploadImage:(form:FormData)=>Promise<{ok:boolean;src?:string;error?:string}>;onBusyChange?:(busy:boolean)=>void;onChange:(body:string,document:RichNode)=>void}){
  const {t,locale}=useAdminLanguage();const id=useId();const [linkOpen,setLinkOpen]=useState(false),[url,setUrl]=useState(''),[error,setError]=useState('');
- const editor=useEditor({extensions:[StarterKit.configure({heading:{levels:[2,3,4]},code:false,codeBlock:false,link:{openOnClick:false,autolink:false,linkOnPaste:false,isAllowedUri:safeBlogUrl}})],immediatelyRender:false,shouldRerenderOnTransaction:true,content:richText??plainToRichText(body),editable:!disabled,onUpdate:({editor})=>{const doc=normalizeRichText(editor.getJSON() as RichNode);onChange(richTextToPlain(doc),doc);}});
+ const fileRef=useRef<HTMLInputElement>(null);const insertion=useRef<{from:number;to:number}|null>(null);
+ const [uploading,setUploading]=useState(false);
+ const editor=useEditor({extensions:[BlogImage,StarterKit.configure({heading:{levels:[2,3,4]},code:false,codeBlock:false,link:{openOnClick:false,autolink:false,linkOnPaste:false,isAllowedUri:safeBlogUrl}})],immediatelyRender:false,shouldRerenderOnTransaction:true,content:richText??plainToRichText(body),editable:!disabled,onUpdate:({editor})=>{const doc=normalizeRichText(editor.getJSON() as RichNode);onChange(richTextToPlain(doc),doc);}});
  useEffect(()=>{editor?.setEditable(!disabled,false);},[editor,disabled]);
  useEffect(()=>{editor?.setOptions({editorProps:{attributes:{role:'textbox','aria-multiline':'true','aria-labelledby':id,'aria-describedby':`${id}-help`,'aria-disabled':String(disabled)}}});},[editor,id,disabled]);
  const button=(label:string,run:()=>void,active?:boolean,inactive=false)=><button type="button" className="cms-format-button" disabled={disabled||!editor||inactive} aria-pressed={active} title={t(label)} onClick={run}>{t(label)}</button>;
  const applyLink=()=>{const href=url.trim();if(!safeBlogUrl(href)||href.length>2048){setError('Usa un enlace completo https://, http:// o mailto:.');return;}if(!editor)return;const chain=editor.chain().focus();if(editor.state.selection.empty&&!editor.isActive('link'))chain.insertContent({type:'text',text:href,marks:[{type:'link',attrs:{href}}]}).run();else chain.extendMarkRange('link').setLink({href}).run();setLinkOpen(false);setError('');};
+ async function insertImage(file:File){
+ if(!editor)return;
+ if(file.size>5*1024*1024||!['image/png','image/jpeg','image/webp'].includes(file.type)){setError('Usa PNG, JPEG o WebP de hasta 5 MB.');return;}
+ setError('');setUploading(true);onBusyChange?.(true);
+ try{const form=new FormData();form.set('image',file);const result=await uploadImage(form);if(!result.ok||!result.src)throw new Error(result.error||'No se pudo subir la imagen. Vuelve a intentarlo.');
+ if(!editor.isDestroyed){const position=insertion.current??editor.state.selection;editor.chain().focus().setTextSelection(position).setImage({src:result.src,alt:''}).run();}}
+ catch(error){setError(error instanceof Error?error.message:'No se pudo subir la imagen. Vuelve a intentarlo.');}
+ finally{setUploading(false);onBusyChange?.(false);}
+ }
  const words=body.trim()?body.trim().split(/\s+/u).length:0;
  return <section className="cms-rich-editor" aria-labelledby={id}><div className="cms-rich-heading"><strong id={id}>{t('Contenido de la entrada')}</strong><small>{words.toLocaleString(locale)} {t('palabras')} · {Math.max(1,Math.ceil(words/200))} {t('min de lectura')}</small></div>
  <p id={`${id}-help`} className="cms-help">{t('Selecciona texto para darle formato. Puedes pegar texto desde otros documentos.')}</p>
@@ -24,12 +41,17 @@ export default function BlogEditor({body,richText,disabled,onChange}:{body:strin
  {button('Lista numerada',()=>editor?.chain().focus().toggleOrderedList().run(),editor?.isActive('orderedList'))}
  {button('Cita',()=>editor?.chain().focus().toggleBlockquote().run(),editor?.isActive('blockquote'))}
  {button('Enlace',()=>{setUrl(editor?.getAttributes('link').href??'');setError('');setLinkOpen(v=>!v);},editor?.isActive('link'))}
+ {button('Insertar imagen',()=>{if(!editor)return;insertion.current={from:editor.state.selection.from,to:editor.state.selection.to};fileRef.current?.click();},undefined,uploading)}
+ <input ref={fileRef} type="file" accept="image/png,image/jpeg,image/webp" hidden aria-label={t('Imagen dentro del artículo')} onChange={event=>{const file=event.target.files?.[0];event.target.value='';if(file)void insertImage(file);}}/>
  {button('Separador',()=>editor?.chain().focus().setHorizontalRule().run())}
  {button('Quitar formato',()=>editor?.chain().focus().unsetAllMarks().clearNodes().run())}
  {button('Deshacer',()=>editor?.chain().focus().undo().run(),undefined,!editor?.can().undo())}
  {button('Rehacer',()=>editor?.chain().focus().redo().run(),undefined,!editor?.can().redo())}
  </div>
  {linkOpen&&<div className="cms-link-editor"><label>{t('Dirección del enlace')}<input autoFocus type="url" value={url} placeholder="https://…" disabled={disabled} aria-invalid={!!error} onChange={e=>{setUrl(e.target.value);setError('');}} onKeyDown={e=>{if(e.key==='Enter'){e.preventDefault();applyLink();}if(e.key==='Escape'){setLinkOpen(false);editor?.commands.focus();}}}/></label><div>{button('Aplicar enlace',applyLink)}{button('Quitar enlace',()=>{editor?.chain().focus().extendMarkRange('link').unsetLink().run();setLinkOpen(false);})}{button('Cancelar',()=>{setLinkOpen(false);editor?.commands.focus();})}</div>{error&&<p role="alert">{t(error)}</p>}</div>}
+ {uploading&&<p role="status">{t('Subiendo imagen…')}</p>}
+ {!linkOpen&&error&&<p role="alert">{t(error)}</p>}
+ {editor?.isActive('image')&&<div className="cms-inline-image-controls"><label>{t('Descripción de esta imagen')}<input disabled={disabled} maxLength={300} value={editor.getAttributes('image').alt??''} onChange={event=>editor.chain().updateAttributes('image',{alt:event.target.value}).run()}/></label><div>{button('Quitar imagen del texto',()=>editor.chain().focus().deleteSelection().run())}</div><small>{t('Selecciona la imagen para describirla o quitarla. Puedes arrastrarla entre párrafos.')}</small></div>}
  {!editor&&<p className="cms-help">{t('Cargando editor…')}</p>}<EditorContent editor={editor} className="cms-prose"/>
  <div className="cms-rich-footer"><span>{t('Atajos: ⌘/Ctrl + B para negrita, I para cursiva y Z para deshacer.')}</span><span role="status">{body.length.toLocaleString(locale)} / 60,000 {t('caracteres')}</span></div></div>
  {body.length>60000&&<p role="alert">{t('El contenido supera el límite de 60,000 caracteres. Reduce el texto antes de guardar.')}</p>}

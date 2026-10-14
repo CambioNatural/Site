@@ -5,3 +5,4 @@
 
 .blog-article-cover .blog-cover{aspect-ratio:auto;max-height:720px;object-fit:contain}
 .blog-page > nav[aria-label="Main navigation"]{background-color:var(--blog-paper)}
+.blog-page .cms-prose figure{margin:32px 0}.blog-page .cms-prose figure img{display:block;width:auto;max-width:100%;height:auto;margin:0 auto}

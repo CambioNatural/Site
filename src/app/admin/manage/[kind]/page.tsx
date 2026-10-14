@@ -17,9 +17,9 @@ export default async function Page({ params }: {
         redirect('/admin/login');
     const { supabase, access } = await getCmsAccess();
     if(!access.modules.includes(kind.data))redirect('/admin');
-    const [drafts, published] = await Promise.all([supabase.from('cms_entries').select('*').eq('kind', kind.data).order('updated_at', { ascending: false }), supabase.from('cms_entry_publications').select('id,version').eq('kind', kind.data)]);
+    const [drafts, published] = await Promise.all([supabase.from('cms_entries').select('*').eq('kind', kind.data).order('updated_at', { ascending: false }), supabase.from('cms_entry_publications').select('id,version,slug').eq('kind', kind.data)]);
     if (drafts.error || published.error)
         throw new Error('No se pudo cargar el módulo. Vuelve a intentarlo.');
-    const entries: Entry[] = (drafts.data ?? []).map(row => ({ ...row, content: parseEntry(kind.data, row.content), publishedVersion: published.data?.find(p => p.id === row.id)?.version ?? null }));
+    const entries: Entry[] = (drafts.data ?? []).map(row => ({ ...row, content: parseEntry(kind.data, row.content), publishedSlug:published.data?.find(p=>p.id===row.id)?.slug??null, publishedVersion: published.data?.find(p => p.id === row.id)?.version ?? null }));
     return <EntryManager kind={kind.data} initialEntries={entries} access={access}/>;
 }

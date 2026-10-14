@@ -1,8 +1,9 @@
 import {z} from 'zod';
-export type RichNode={type:string;text?:string;attrs?:{level?:number;start?:number;href?:string};marks?:RichNode[];content?:RichNode[]};
+import {imageSourceSchema} from '@/lib/cms/schema';
+export type RichNode={type:string;text?:string;attrs?:{level?:number;start?:number;href?:string;src?:string;alt?:string};marks?:RichNode[];content?:RichNode[]};
 export function safeBlogUrl(value:string){try{const u=new URL(value);return ['https:','http:','mailto:'].includes(u.protocol)&&!u.username&&!u.password&&!/[\u0000-\u0020]/.test(value);}catch{return false;}}
 const inline=['text','hardBreak'];
-const blocks=['paragraph','heading','blockquote','bulletList','orderedList','horizontalRule'];
+const blocks=['paragraph','heading','blockquote','bulletList','orderedList','horizontalRule','image'];
 function validDocument(input:unknown):input is RichNode{
  const stack:{node:unknown;depth:number;parent:string}[]=[{node:input,depth:0,parent:''}];let count=0;
  while(stack.length){const {node,depth,parent}=stack.pop()!;if(++count>5000||depth>12||!node||typeof node!=='object'||Array.isArray(node))return false;
@@ -11,7 +12,8 @@ function validDocument(input:unknown):input is RichNode{
   const allowed=parent===''?['doc']:['paragraph','heading'].includes(parent)?inline:['bulletList','orderedList'].includes(parent)?['listItem']:blocks;
   if(!allowed.includes(n.type))return false;
   if(n.type==='text'){if(typeof n.text!=='string'||!n.text.length||n.content||n.attrs)return false;}else if(n.text!==undefined||n.marks!==undefined)return false;
-  if(n.attrs){if(typeof n.attrs!=='object'||Array.isArray(n.attrs))return false;const keys=Object.keys(n.attrs);if(n.type==='heading'){if(keys.some(k=>k!=='level')||![2,3,4].includes(n.attrs.level!))return false;}else if(n.type==='orderedList'){if(keys.some(k=>k!=='start')||!Number.isInteger(n.attrs.start)||n.attrs.start!<1||n.attrs.start!>10000)return false;}else return false;}
+  if(n.attrs){if(typeof n.attrs!=='object'||Array.isArray(n.attrs))return false;const keys=Object.keys(n.attrs);if(n.type==='heading'){if(keys.some(k=>k!=='level')||![2,3,4].includes(n.attrs.level!))return false;}else if(n.type==='orderedList'){if(keys.some(k=>k!=='start')||!Number.isInteger(n.attrs.start)||n.attrs.start!<1||n.attrs.start!>10000)return false;}else if(n.type==='image'){if(keys.some(k=>!['src','alt'].includes(k))||!imageSourceSchema.safeParse(n.attrs.src).success||typeof n.attrs.alt!=='string'||n.attrs.alt.length>300)return false;}else return false;}
+  if(n.type==='image'&&(!n.attrs||n.content!==undefined))return false;
   if(n.type==='heading'&&!n.attrs)return false;
   if(n.marks){if(!Array.isArray(n.marks)||n.marks.length>5)return false;for(const mark of n.marks){if(!mark||typeof mark!=='object'||Object.keys(mark).some(k=>!['type','attrs'].includes(k)))return false;if(mark.type==='link'){if(!mark.attrs||Object.keys(mark.attrs).some(k=>k!=='href')||typeof mark.attrs.href!=='string'||mark.attrs.href.length>2048||!safeBlogUrl(mark.attrs.href))return false;}else if(!['bold','italic','underline','strike'].includes(mark.type)||mark.attrs)return false;}}
   if(n.content!==undefined){if(!Array.isArray(n.content)||inline.includes(n.type)||n.type==='horizontalRule')return false;for(const child of n.content)stack.push({node:child,depth:depth+1,parent:n.type});}
@@ -27,12 +29,13 @@ export function normalizeRichText(node:RichNode):RichNode{
  if(node.type==='heading')result.attrs={level:node.attrs?.level};
  if(node.type==='orderedList')result.attrs={start:node.attrs?.start??1};
  if(node.type==='link')result.attrs={href:node.attrs?.href};
+ if(node.type==='image')result.attrs={src:node.attrs?.src,alt:node.attrs?.alt??''};
  if(node.marks)result.marks=node.marks.map(normalizeRichText);
  if(node.content)result.content=node.content.map(normalizeRichText);
  return result;
 }
 export function plainToRichText(body:string):RichNode{return {type:'doc',content:body.split(/\r?\n/).map(line=>({type:'paragraph',...(line?{content:[{type:'text',text:line}]}:{})}))};}
 export function richTextToPlain(node:RichNode):string{
- function text(n:RichNode):string{if(n.type==='text')return n.text??'';if(n.type==='hardBreak')return '\n';return(n.content??[]).map(text).join(['paragraph','heading'].includes(n.type)?'':'\n');}
+ function text(n:RichNode):string{if(n.type==='text')return n.text??'';if(n.type==='hardBreak')return '\n';return(n.content??[]).filter(child=>child.type!=='image').map(text).join(['paragraph','heading'].includes(n.type)?'':'\n');}
  return text(node).trim();
 }

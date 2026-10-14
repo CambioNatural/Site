@@ -1,6 +1,17 @@
 export type AdminLanguage='es'|'en';
 export const english:Record<string,string>={};
 const entries=`
+Ver publicación|View published post
+Actualizar publicación|Update publication
+Imagen de portada (opcional)|Cover image (optional)
+Se muestra en la tarjeta del blog y al inicio del artículo. Las imágenes dentro del texto se agregan desde su barra de herramientas.|Shown on the blog card and at the start of the article. Add images within the text using its toolbar.
+Insertar imagen|Insert image
+Imagen dentro del artículo|Image within the article
+Descripción de esta imagen|Image description
+Quitar imagen del texto|Remove image from text
+Selecciona la imagen para describirla o quitarla. Puedes arrastrarla entre párrafos.|Select an image to describe or remove it. You can drag it between paragraphs.
+Subiendo imagen…|Uploading image…
+
 Páginas|Pages
 No se encontraron coincidencias. Prueba otro texto.|No matches found. Try another text.
 Páginas del sitio|Site pages
