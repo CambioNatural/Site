@@ -1,0 +1,30 @@
+const {chromium}=require('playwright');const {expect}=require('@playwright/test');const assert=require('node:assert/strict');const fs=require('node:fs');const sharp=require('sharp');
+const base=process.env.MONSTERS_BASE_URL||'http://127.0.0.1:3000';const output=process.env.MONSTERS_OUTPUT_DIR||'docs/validacion/monsters/sharing';
+(async()=>{const browser=await chromium.launch({channel:'chrome',headless:true});try{const page=await browser.newPage({viewport:{width:390,height:844}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
+await page.addInitScript(()=>{
+ window.shareMode='success';window.shared=[];
+ Object.defineProperty(navigator,'canShare',{configurable:true,value:data=>window.shareMode!=='unsupported'&&data.files?.[0]?.type==='image/png'});
+ Object.defineProperty(navigator,'share',{configurable:true,value:async data=>{
+  if(window.shareMode==='cancel')throw new DOMException('Cancelled','AbortError');
+  if(window.shareMode==='error')throw new DOMException('Unavailable','NotAllowedError');
+  const active=navigator.userActivation.isActive;
+  const bytes=new Uint8Array(await data.files[0].arrayBuffer());
+  window.shared.push({title:data.title,text:data.text,url:data.url,name:data.files[0].name,type:data.files[0].type,active,bytes:Array.from(bytes)});
+ }});
+ Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async text=>{if(window.denyClipboard)throw new DOMException('Denied','NotAllowedError');window.copied=text;}}});
+});
+await page.goto(`${base}/we-are-all-monsters`,{waitUntil:'networkidle'});
+await page.getByLabel('I want to start by…',{exact:true}).fill('starting a repair circle');await page.getByLabel('A theme to explore').selectOption('2');
+const button=page.getByRole('button',{name:'Share my monster',exact:false});await expect(button).toBeEnabled();await button.click();
+await expect.poll(()=>page.evaluate(()=>window.shared.length)).toBe(1);
+const first=await page.evaluate(()=>window.shared[0]);assert.equal(first.active,true);assert.equal(first.url,'https://www.cambionatur.al/we-are-all-monsters');assert.ok(first.text.includes('starting a repair circle'));assert.ok(first.text.includes('#WeAreAllMonsters'));assert.ok(first.text.includes('The Consumer Cyclops'));assert.equal(first.type,'image/png');assert.equal(first.name,'we-are-all-monsters.png');assert.equal((await sharp(Buffer.from(first.bytes)).metadata()).width,1080);
+await page.getByRole('button',{name:'Body colour: Sky blue',exact:true}).click();await page.getByLabel('I want to start by…',{exact:true}).fill('sharing tools with neighbours');await expect(button).toBeEnabled();await button.click();await expect.poll(()=>page.evaluate(()=>window.shared.length)).toBe(2);const second=await page.evaluate(()=>window.shared[1]);assert.ok(second.text.includes('sharing tools with neighbours'));assert.notDeepEqual(first.bytes,second.bytes);
+await page.evaluate(()=>window.shareMode='cancel');await button.click();await expect(page.getByText('Sharing cancelled. Your monster is still here.')).toBeVisible();await expect(page.getByRole('heading',{name:'Take your monster with you'})).toHaveCount(0);
+await page.evaluate(()=>window.shareMode='error');await button.click();await expect(page.getByRole('heading',{name:'Take your monster with you'})).toBeVisible();await page.getByRole('button',{name:'Copy caption & link',exact:true}).click();const copied=await page.evaluate(()=>window.copied);assert.ok(copied.includes('sharing tools with neighbours'));assert.ok(copied.includes('#WeAreAllMonsters'));assert.ok(copied.includes(first.url));
+await page.evaluate(()=>window.denyClipboard=true);await page.getByRole('button',{name:'Copy caption & link',exact:true}).click();await expect(page.getByLabel('Caption & campaign link')).toBeFocused();assert.ok(await page.getByLabel('Caption & campaign link').evaluate(e=>e.selectionEnd===e.value.length));
+fs.mkdirSync(output,{recursive:true});const download=page.waitForEvent('download');await page.getByRole('button',{name:'Save image',exact:true}).click();await(await download).saveAs(`${output}/fallback-card.png`);assert.equal((await sharp(`${output}/fallback-card.png`).metadata()).height,1350);
+await page.evaluate(()=>window.shareMode='unsupported');await button.click();await expect(page.getByRole('heading',{name:'Take your monster with you'})).toBeVisible();
+await page.evaluate(()=>Object.defineProperty(navigator,'share',{value:undefined}));await button.click();await expect(page.getByRole('heading',{name:'Take your monster with you'})).toBeVisible();
+assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);await page.screenshot({path:`${output}/sharing-mobile.png`,fullPage:true});assert.deepEqual(errors,[]);fs.writeFileSync(`${output}/native-payload-card.png`,Buffer.from(second.bytes));
+console.log('PASS: native share payload (mocked OS boundary), current PNG/phrase/hashtag/campaign URL, retained user activation, edits, cancellation, failure, unsupported/absent API, clipboard success/denial, real fallback PNG download, mobile layout. No post or message sent.');
+}finally{await browser.close();}})().catch(e=>{console.error(e);process.exit(1)});
