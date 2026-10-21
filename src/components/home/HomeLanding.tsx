@@ -56,6 +56,10 @@ export default function HomeLanding({ content, navigation, newsletterUrl, previe
             ))}
           </div>
         </section>
+        <aside style={{background:"#ffe500",padding:"32px 24px",textAlign:"center"}} aria-label="We Are All Monsters campaign">
+          <p style={{fontWeight:700,marginBottom:12}}>WE ARE ALL MONSTERS.</p>
+          <a href="/we-are-all-monsters" style={{textDecoration:"underline"}}>Meet the campaign. Make your monster ↗</a>
+        </aside>
         <section data-scroll-section="Featured article" className={`${styles.container} ${styles.articleSection}`} aria-labelledby="article-heading">
           <div className={styles.articleCard}>
             <div className={styles.articleText}>

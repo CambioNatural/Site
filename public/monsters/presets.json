@@ -1,0 +1,203 @@
+[
+  {
+    "color": "#bb0084",
+    "accent": "#0b0d08",
+    "feature": "#bb0084",
+    "crown": "round-ears",
+    "ears": "none",
+    "eyes": "pair",
+    "pupils": "round",
+    "pattern": "band"
+  },
+  {
+    "color": "#de9800",
+    "accent": "#0b0d08",
+    "feature": "#de9800",
+    "crown": "curls",
+    "ears": "bat-wings",
+    "eyes": "single",
+    "pupils": "round",
+    "pattern": "plain"
+  },
+  {
+    "color": "#ffe500",
+    "accent": "#00a2d5",
+    "feature": "#ffe500",
+    "crown": "soft-horns",
+    "ears": "fins",
+    "eyes": "pair",
+    "pupils": "crosses",
+    "pattern": "plain"
+  },
+  {
+    "color": "#c90019",
+    "accent": "#0b0d08",
+    "feature": "#c90019",
+    "crown": "tuft",
+    "ears": "spines",
+    "eyes": "pair",
+    "pupils": "round",
+    "pattern": "plain"
+  },
+  {
+    "color": "#70aa6c",
+    "accent": "#aac42c",
+    "feature": "#0b0d08",
+    "crown": "spikes",
+    "ears": "none",
+    "eyes": "single",
+    "pupils": "hearts",
+    "pattern": "chevron"
+  },
+  {
+    "color": "#70aa6c",
+    "accent": "#aac42c",
+    "feature": "#70aa6c",
+    "crown": "sprouts",
+    "ears": "fins",
+    "eyes": "pair",
+    "pupils": "wink",
+    "pattern": "band",
+    "earColor": "#de9800"
+  },
+  {
+    "color": "#87008c",
+    "accent": "#0b0d08",
+    "feature": "#0b0d08",
+    "crown": "spikes",
+    "ears": "none",
+    "eyes": "triple",
+    "pupils": "round",
+    "pattern": "plain"
+  },
+  {
+    "color": "#00a2d5",
+    "accent": "#0b0d08",
+    "feature": "#00a2d5",
+    "crown": "antennae",
+    "ears": "none",
+    "eyes": "pair",
+    "pupils": "hearts",
+    "pattern": "plain"
+  },
+  {
+    "color": "#bb0084",
+    "accent": "#de9800",
+    "feature": "#de9800",
+    "crown": "dome",
+    "ears": "none",
+    "eyes": "pair",
+    "pupils": "mixed-cross",
+    "pattern": "fringe"
+  },
+  {
+    "color": "#ffe500",
+    "accent": "#0b0d08",
+    "feature": "#0b0d08",
+    "crown": "curls-only",
+    "ears": "none",
+    "eyes": "pair",
+    "pupils": "round",
+    "pattern": "drops"
+  },
+  {
+    "color": "#00a2d5",
+    "accent": "#0b0d08",
+    "feature": "#00a2d5",
+    "crown": "crown",
+    "ears": "none",
+    "eyes": "single",
+    "pupils": "hearts",
+    "pattern": "plain"
+  },
+  {
+    "color": "#de9800",
+    "accent": "#ffffff",
+    "feature": "#de9800",
+    "crown": "waves",
+    "ears": "none",
+    "eyes": "pair",
+    "pupils": "round",
+    "pattern": "drops"
+  },
+  {
+    "color": "#ffe500",
+    "accent": "#0b0d08",
+    "feature": "#0b0d08",
+    "crown": "spikes",
+    "ears": "fins",
+    "eyes": "pair",
+    "pupils": "round",
+    "pattern": "band"
+  },
+  {
+    "color": "#70aa6c",
+    "accent": "#0b0d08",
+    "feature": "#0b0d08",
+    "crown": "soft-horns",
+    "ears": "horns",
+    "eyes": "pair",
+    "pupils": "wink-right",
+    "pattern": "chevron"
+  },
+  {
+    "color": "#87008c",
+    "accent": "#0b0d08",
+    "feature": "#0b0d08",
+    "crown": "knob",
+    "ears": "none",
+    "eyes": "pair",
+    "pupils": "round",
+    "pattern": "fringe"
+  },
+  {
+    "color": "#87008c",
+    "accent": "#0b0d08",
+    "feature": "#0b0d08",
+    "crown": "dome",
+    "ears": "round",
+    "eyes": "pair",
+    "pupils": "round",
+    "pattern": "fringe"
+  },
+  {
+    "color": "#ffe500",
+    "accent": "#0b0d08",
+    "feature": "#0b0d08",
+    "crown": "sprouts",
+    "ears": "droop",
+    "eyes": "pair",
+    "pupils": "round",
+    "pattern": "plain"
+  },
+  {
+    "color": "#c90019",
+    "accent": "#0b0d08",
+    "feature": "#c90019",
+    "crown": "waves",
+    "ears": "none",
+    "eyes": "pair",
+    "pupils": "mixed-heart",
+    "pattern": "chevron"
+  },
+  {
+    "color": "#00a2d5",
+    "accent": "#0b0d08",
+    "feature": "#0b0d08",
+    "crown": "spikes",
+    "ears": "none",
+    "eyes": "single",
+    "pupils": "cross-open",
+    "pattern": "plain"
+  },
+  {
+    "color": "#aac42c",
+    "accent": "#0b0d08",
+    "feature": "#aac42c",
+    "crown": "swept-horns",
+    "ears": "bat-wings",
+    "eyes": "single",
+    "pupils": "crosses",
+    "pattern": "plain"
+  }
+]
